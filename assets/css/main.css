@@ -979,3 +979,304 @@ section,
   margin: 0 0 15px 0 0 0;
   padding: 0;
 }
+
+/* Werot Custom Styles (About Page Profile Card)
+/* 1. สไตล์ของการ์ดครอบ (The Wrapper Card) */
+.about .profile-card {
+  background: #ffffff;
+  /* พื้นการ์ดสีขาว */
+  border-radius: 20px;
+  /* ขอบมลของตัวการ์ด */
+  padding: 15px;
+  /* ระยะห่างระหว่างขอบการ์ดกับรูป */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  /* เงาของการ์ด: X Y เบลอ สี(ดำใสๆ) */
+  display: inline-block;
+  /* ทำให้การ์ดขนาดพอดีกับรูป */
+  width: 100%;
+  /* Fill the column width on mobile */
+  max-width: 350px;
+  /* จำกัดขนาดการ์ดไม่ให้ใหญ่เกินไปบน Desktop */
+  overflow: hidden;
+  /* กันรูปโผล่ */
+}
+
+/* 2. สไตล์ของตัวรูปภาพ (The Image inside) */
+.about .profile-card img {
+  border-radius: 15px;
+  /* ขอบมลของตัวรูปภาพเอง ให้เข้ากับการ์ด */
+  width: 100%;
+  /* ให้รูปเต็มการ์ด */
+  height: auto;
+  /* รักษาอัตราส่วนรูป */
+}
+
+/* ปรับให้การ์ดอยู่ตรงกลางบน Desktop */
+@media (min-width: 992px) {
+  .about .profile-card {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   Hero Section Bottom Fade
+   ========================================================================== */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  /* ทับเส้นขอบรูปล่างสุดให้มิด */
+  left: 0;
+  width: 100%;
+  height: 250px;
+  /* เพิ่มความสูงให้ระยะการไล่สีดูนุ่มนวลและเบลอขึ้น */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--background-color) 90%, var(--background-color) 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Portfolio Custom Interactions (Clickable Card & Hover Effects)
+   ========================================================================== */
+.portfolio-card-link {
+  display: block;
+  position: relative;
+  border-radius: 15px;
+  /* ทำขอบการ์ดให้มน */
+  overflow: hidden;
+  /* บังคับให้รูปที่ซูมไม่ล้นขอบมน */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  /* เงาบางๆ ตอนปกติ */
+}
+
+/* ตั้งค่าระยะเวลาซูมรูปภาพ */
+.portfolio-card-link img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+/* สิ่งที่จะเกิดขึ้นตอนเอาเมาส์ชี้การ์ด (Hover) */
+.portfolio-card-link:hover {
+  transform: translateY(-8px);
+  /* การ์ดเด้งลอยขึ้น */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  /* เงาเข้มและกว้างขึ้นให้ดูมีมิติ */
+  color: inherit;
+  /* ป้องกันไม่ให้สีตัวอักษรเพี้ยนเป็นสีลิงก์ */
+}
+
+.portfolio-card-link:hover img {
+  transform: scale(1.08);
+  /* รูปภาพซูมเข้า 8% */
+}
+
+/* ปรับแต่งแผ่นป้ายสีดำ (Overlay) ที่เลื่อนขึ้นมาให้สวยขึ้น */
+.portfolio .portfolio-item .portfolio-info {
+  border-radius: 12px;
+  /* ให้ขอบมนรับกับการ์ด */
+  padding: 20px;
+}
+
+/* ยกกล่องดำให้ลอยขึ้นมานิดนึง ไม่ให้ติดขอบล่างเกินไปตอน Hover */
+.portfolio .portfolio-item:hover .portfolio-info {
+  bottom: 12px;
+}
+
+/* ==========================================================================
+   Portfolio Details Vertical Tabs (Custom Menu)
+   ========================================================================== */
+.custom-pills .nav-link {
+  text-align: left;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--default-color), transparent 95%);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: none;
+}
+
+.custom-pills .nav-link:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: var(--accent-color);
+}
+
+.custom-pills .nav-link.active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+.custom-pills .nav-link i {
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   Photo Stack (กระดาษซ้อนกันบนหน้าเว็บ)
+   ========================================================================== */
+.photo-stack {
+  position: relative;
+  z-index: 1;
+  width: 85%;
+  margin: 20px auto 40px auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.photo-stack::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5px;
+  right: -10px;
+  bottom: -5px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transform: rotate(3deg);
+  transition: all 0.3s ease;
+}
+
+.photo-stack::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 15px;
+  left: 15px;
+  right: -20px;
+  bottom: -15px;
+  background: #e9ecef;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+}
+
+.photo-stack .main-stack-img {
+  border: 5px solid #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.photo-stack:hover {
+  transform: translateY(-5px);
+}
+
+.photo-stack:hover::before {
+  transform: rotate(5deg) translate(5px, 5px);
+}
+
+.photo-stack:hover::after {
+  transform: rotate(-4deg) translate(-5px, -5px);
+}
+
+/* ==========================================================================
+   Game Inventory Gallery Modal (สล็อตเก็บของ)
+   ========================================================================== */
+.inventory-slot {
+  width: 80px;
+  height: 80px;
+  padding: 3px;
+  background: #1a1a2e;
+  /* พื้นหลังสล็อตสีเข้มๆ */
+  border: 2px solid #2a2a40;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inventory-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.inventory-slot:hover {
+  background: #2a2a40;
+  border-color: #4a4a60;
+  transform: translateY(-2px);
+}
+
+.inventory-slot:hover img {
+  opacity: 0.9;
+}
+
+/* สล็อตที่กำลังถูกเลือก (เรืองแสงเหมือนไอเทมแรร์) */
+.inventory-slot.active-slot {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--accent-color), transparent 40%);
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  transform: translateY(-2px);
+}
+
+.inventory-slot.active-slot img {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Role Switcher (Horizontal Expanding Pills)
+   ========================================================================== */
+#role-tab .role-animated-btn {
+  color: var(--heading-color);
+  background: #f0f2f5;
+  /* สีพื้นหลังตอนไม่ได้เลือก เป็นวงกลมเทาอ่อน */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 56px;
+  width: 56px;
+  /* เริ่มต้นเป็นวงกลม */
+  border-radius: 50px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+  font-weight: 600;
+}
+
+/* จัดไอคอนให้อยู่กลางวงกลมตอนหด */
+#role-tab .role-animated-btn i {
+  min-width: 56px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ซ่อนข้อความไว้ก่อน */
+#role-tab .role-animated-btn span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-right: 25px;
+}
+
+/* ==========================================================
+   ตอนเอาเมาส์ชี้ หรือ ปุ่มที่ถูกเลือก (Hover & Active)
+   ========================================================== */
+#role-tab .role-animated-btn:hover,
+#role-tab .role-animated-btn.active {
+  width: 260px;
+  /* ยืดออกแนวนอนเพื่อโชว์ข้อความ */
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+#role-tab .role-animated-btn:hover span,
+#role-tab .role-animated-btn.active span {
+  opacity: 1;
+  /* เฟดข้อความขึ้นมา */
+}

@@ -60,68 +60,418 @@
 
       <div class="container" data-aos="fade-up">
 
-        <div class="portfolio-details-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              },
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-
-            <div class="swiper-slide">
-              <img src="assets/img/portfolio/PJ1.png" alt="">
-            </div>
-
+        <div class="row justify-content-between gy-4 mb-5">
+          <div class="col-lg-8">
+            <h2 class="fw-bold">ACADEMIC COMPETITION MANAGEMENT SYSTEM FOR ECO 9RMUTI</h2>
+            <p><em>Full-Stack Developer (Backend-Focused) | Web-based Application</em></p>
+            <p>ระบบจัดการแข่งขันวิชาการสำหรับ มทร.อีสาน วิทยาเขตขอนแก่น ออกแบบมาเพื่อบริหารจัดการแข่งขันวิชาการของ 9
+              มทร. เน้นการทำงานแบบอัตโนมัติ ลดขั้นตอนการทำงานที่ซ้ำซ้อน (Streamlining workflows)
+              และมีระบบประมวลผลหลังบ้านที่แม่นยำ</p>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-        <div class="row justify-content-between gy-4 mt-4">
-
-          <div class="col-lg-8" data-aos="fade-up">
-            <div class="portfolio-description">
-              <h2>ACADEMIC COMPETITION MANAGEMENT SYSTEM FOR ECO 9RMUTI</h2>
-              <p><em>Full-Stack Developer (Backend-Focused) | Web-based Application</em></p>
-              <ul>
-                <li>Developed management system for RMUTI Khon Kaen to use as the host of the 2027 academic competition
-                  for the 9 RMUT.</li>
-                <li>Manage both backend operations (PHP, MySQL, CRUD) and frontend UX/UI design.</li>
-                <li>Designed system logic focused on streamlining workflows and minimizing manual steps for users.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="portfolio-info">
+          <div class="col-lg-4">
+            <div class="portfolio-info" style="margin-top: 0;">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Web Development</li>
+                <li><strong>Category</strong>: Web Development (Backend)</li>
                 <li><strong>Client</strong>: RMUTI Khon Kaen Campus</li>
-                <li><strong>Project date</strong>: 2024</li>
                 <li><strong>Tech Stack</strong>: PHP, MySQL, HTML5, CSS3, JavaScript</li>
               </ul>
             </div>
           </div>
+        </div>
 
+        <hr style="border-color: #ddd; margin-bottom: 40px;">
+
+        <div class="d-flex justify-content-center mb-5" data-aos="fade-up">
+          <div class="nav nav-pills" id="role-tab" role="tablist" style="gap: 15px;">
+
+            <button class="nav-link active role-animated-btn" id="role-manager-tab" data-bs-toggle="pill"
+              data-bs-target="#role-manager" type="button" role="tab">
+              <i class="bi bi-person-workspace"></i> <span>ผู้จัดการแข่งขัน (Manager)</span>
+            </button>
+
+            <button class="nav-link role-animated-btn" id="role-admin-tab" data-bs-toggle="pill"
+              data-bs-target="#role-admin" type="button" role="tab">
+              <i class="bi bi-shield-lock"></i> <span>ผู้ดูแลระบบ (Admin)</span>
+            </button>
+
+          </div>
+        </div>
+
+        <div class="tab-content" id="role-tabContent">
+
+          <div class="tab-pane fade show active" id="role-manager" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-4 col-md-5 mb-4">
+                <h4 class="mb-4 fw-bold" style="color: var(--heading-color);">โมดูลฝั่งผู้จัดการแข่งขัน</h4>
+                <div class="nav flex-column nav-pills custom-pills" id="v-pills-tab" role="tablist"
+                  aria-orientation="vertical">
+                  <button class="nav-link active" id="v-pills-p1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p1"
+                    type="button" role="tab"><i class="bi bi-display me-2"></i> 1. หน้าหลักระบบ</button>
+                  <button class="nav-link" id="v-pills-p2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p2"
+                    type="button" role="tab"><i class="bi bi-check-circle me-2"></i> 2. อนุมัติทีมแข่งขัน</button>
+                  <button class="nav-link" id="v-pills-p3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p3"
+                    type="button" role="tab"><i class="bi bi-people me-2"></i> 3. จัดการทีมเข้าแข่งขัน</button>
+                  <button class="nav-link" id="v-pills-p4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p4"
+                    type="button" role="tab"><i class="bi bi-person-vcard me-2"></i> 4. จัดการข้อมูลผู้เข้าแข่ง</button>
+                  <button class="nav-link" id="v-pills-p5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p5"
+                    type="button" role="tab"><i class="bi bi-coin me-2"></i> 5. จัดการเครดิต</button>
+                  <button class="nav-link" id="v-pills-p6-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p6"
+                    type="button" role="tab"><i class="bi bi-trophy me-2"></i> 6. ประเภทผลการแข่งขัน</button>
+                  <button class="nav-link" id="v-pills-p7-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p7"
+                    type="button" role="tab"><i class="bi bi-calendar-event me-2"></i> 7. กำหนดรอบ</button>
+                  <button class="nav-link" id="v-pills-p8-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p8"
+                    type="button" role="tab"><i class="bi bi-clipboard-data me-2"></i> 8. ผลการแข่งขัน</button>
+                  <button class="nav-link" id="v-pills-p9-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p9"
+                    type="button" role="tab"><i class="bi bi-person-workspace me-2"></i> 9. จัดการงานสตาฟ</button>
+                  <button class="nav-link" id="v-pills-p10-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p10"
+                    type="button" role="tab"><i class="bi bi-cash-coin me-2"></i> 10. จัดการเครดิตงานสตาฟ</button>
+                  <button class="nav-link" id="v-pills-p12-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p12"
+                    type="button" role="tab"><i class="bi bi-shuffle me-2"></i> 11. การแข่งขันคละทีม</button>
+                  <button class="nav-link" id="v-pills-p14-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p14"
+                    type="button" role="tab"><i class="bi bi-person-badge me-2"></i> 12. ออกบัตรเข้าร่วมงาน</button>
+                </div>
+              </div>
+
+              <div class="col-lg-8 col-md-7">
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="v-pills-p1" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="หน้าหลักระบบ (Dashboard)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img" alt="Dashboard">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Dashboard</h4>
+                        <p class="text-muted">Real-time statistics and system overview. (คลิกรูปเพื่อเปิดแกลเลอรี่)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p2" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="อนุมัติทีมแข่งขัน (Team Approval)"
+                        data-images="assets/img/portfolio/pj3.png,assets/img/portfolio/pj19.png,assets/img/portfolio/pj20.png">
+                        <img src="assets/img/portfolio/pj3.png" class="img-fluid w-100 main-stack-img" alt="Approval">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Team Approval</h4>
+                        <p class="text-muted">Verify and approve team registrations.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p3" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="จัดการทีม (Team Management)"
+                        data-images="assets/img/portfolio/pj4.png,assets/img/portfolio/pj21.png,assets/img/portfolio/pj22.png">
+                        <img src="assets/img/portfolio/pj4.png" class="img-fluid w-100 main-stack-img" alt="Management">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Team Management</h4>
+                        <p class="text-muted">CRUD operations for competition teams.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p4" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="ข้อมูลผู้เข้าแข่ง (Participant Info)"
+                        data-images="assets/img/portfolio/pj5.png,assets/img/portfolio/pj6.png,assets/img/portfolio/pj23.png">
+                        <img src="assets/img/portfolio/pj5.png" class="img-fluid w-100 main-stack-img"
+                          alt="Participant">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Participant Management</h4>
+                        <p class="text-muted">Manage individual participant profiles.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p5" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="จัดการเครดิต (Credit Management)"
+                        data-images="assets/img/portfolio/pj7.png,assets/img/portfolio/pj24.png,assets/img/portfolio/pj25.png">
+                        <img src="assets/img/portfolio/pj7.png" class="img-fluid w-100 main-stack-img" alt="Credit">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Credit Management</h4>
+                        <p class="text-muted">Monitor and adjust system credits.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p6" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="ประเภทผลการแข่งขัน (Result Categories)"
+                        data-images="assets/img/portfolio/pj26.png,assets/img/portfolio/pj8.png,assets/img/portfolio/pj27.png">
+                        <img src="assets/img/portfolio/pj26.png" class="img-fluid w-100 main-stack-img"
+                          alt="Result Type">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Result Categories</h4>
+                        <p class="text-muted">Define competition scoring types.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p7" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="กำหนดรอบ (Round Scheduling)"
+                        data-images="assets/img/portfolio/pj28.png,assets/img/portfolio/pj9.png,assets/img/portfolio/pj29.png">
+                        <img src="assets/img/portfolio/pj28.png" class="img-fluid w-100 main-stack-img" alt="Round">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Round Management</h4>
+                        <p class="text-muted">Set up competition rounds and brackets.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p8" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="ผลการแข่งขัน (Match Results)"
+                        data-images="assets/img/portfolio/pj10.png,assets/img/portfolio/pj11.png,assets/img/portfolio/pj30.png">
+                        <img src="assets/img/portfolio/pj10.png" class="img-fluid w-100 main-stack-img" alt="Results">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Competition Results</h4>
+                        <p class="text-muted">Record and calculate scores.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p9" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="จัดการงานสตาฟ (Staff Management)"
+                        data-images="assets/img/portfolio/pj13.png,assets/img/portfolio/pj14.png,assets/img/portfolio/pj31.png">
+                        <img src="assets/img/portfolio/pj13.png" class="img-fluid w-100 main-stack-img" alt="Staff">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Staff Management</h4>
+                        <p class="text-muted">Assign tasks and roles to staff members.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p10" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="จัดการเครดิตสตาฟ (Staff Credit)"
+                        data-images="assets/img/portfolio/pj14.png,assets/img/portfolio/pj32.png">
+                        <img src="assets/img/portfolio/pj14.png" class="img-fluid w-100 main-stack-img"
+                          alt="Staff Credit">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Staff Credit System</h4>
+                        <p class="text-muted">Track work history and staff rewards.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p12" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="สุ่มคละทีม (Random Join)"
+                        data-images="assets/img/portfolio/pj33.png,assets/img/portfolio/pj34.png,assets/img/portfolio/pj35.png">
+                        <img src="assets/img/portfolio/pj33.png" class="img-fluid w-100 main-stack-img"
+                          alt="Random Join">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Random Join</h4>
+                        <p class="text-muted">Automated team shuffling logic.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-p14" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="ออกบัตรเข้าร่วมงาน (Badge Issuance)"
+                        data-images="assets/img/portfolio/pj36.png,assets/img/portfolio/pj37.png,assets/img/portfolio/pj38.png">
+                        <img src="assets/img/portfolio/pj36.png" class="img-fluid w-100 main-stack-img" alt="Badge">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Badge Issuance</h4>
+                        <p class="text-muted">Create ID badges for all attendees.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="role-admin" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-4 col-md-5 mb-4">
+                <h4 class="mb-4 fw-bold" style="color: var(--heading-color);">โมดูลฝั่งผู้ดูแลระบบ (Admin)</h4>
+                <div class="nav flex-column nav-pills custom-pills" id="v-pills-admin-tab" role="tablist"
+                  aria-orientation="vertical">
+
+                  <button class="nav-link active" id="v-pills-a1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a1"
+                    type="button" role="tab">
+                    <i class="bi bi-speedometer2 me-2"></i> 1. หน้าหลัก
+                  </button>
+                  <button class="nav-link" id="v-pills-a2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a2"
+                    type="button" role="tab">
+                    <i class="bi bi-pencil-square me-2"></i> 2. แก้ไขโครงการ
+                  </button>
+                  <button class="nav-link" id="v-pills-a3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a3"
+                    type="button" role="tab">
+                    <i class="bi bi-person-badge me-2"></i> 3. จัดการผู้จัดการแข่งขัน
+                  </button>
+                  <button class="nav-link" id="v-pills-a4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a4"
+                    type="button" role="tab">
+                    <i class="bi bi-person-vcard me-2"></i> 4. จัดการสตาฟ
+                  </button>
+                  <button class="nav-link" id="v-pills-a5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a5"
+                    type="button" role="tab">
+                    <i class="bi bi-shop me-2"></i> 5. จัดการร้านค้า
+                  </button>
+                  <button class="nav-link" id="v-pills-a6-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a6"
+                    type="button" role="tab">
+                    <i class="bi bi-calendar-event me-2"></i> 6. จัดการกิจกรรม
+                  </button>
+                  <button class="nav-link" id="v-pills-a7-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a7"
+                    type="button" role="tab">
+                    <i class="bi bi-person-add me-2"></i> 7. มอบหมายผู้จัดการ
+                  </button>
+                  <button class="nav-link" id="v-pills-a8-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a8"
+                    type="button" role="tab">
+                    <i class="bi bi-headset me-2"></i> 8. ผู้ช่วยแอดมิน
+                  </button>
+                  <button class="nav-link" id="v-pills-a9-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a9"
+                    type="button" role="tab">
+                    <i class="bi bi-pie-chart me-2"></i> 9. รายงาน
+                  </button>
+
+                </div>
+              </div>
+
+              <div class="col-lg-8 col-md-7">
+                <div class="tab-content" id="v-pills-admin-tabContent">
+
+                  <div class="tab-pane fade show active" id="v-pills-a1" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="หน้าหลักแอดมิน (Admin Dashboard)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                          alt="Admin Dashboard">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Admin Dashboard</h4>
+                        <p class="text-muted">ภาพรวมระบบ สถิติการใช้งาน และสถานะการแข่งขันทั้งหมด (คลิกเพื่อดูรูป)</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="v-pills-a2" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="แก้ไขโครงการ (Edit Project)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                          alt="Edit Project">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Edit Project</h4>
+                        <p class="text-muted">จัดการแก้ไขรายละเอียด ชื่อโครงการ และข้อมูลเบื้องต้นของการแข่งขัน</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="v-pills-a3" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="จัดการผู้จัดการแข่งขัน (Manager Data)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                          alt="Manager Data">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Managers Management</h4>
+                        <p class="text-muted">เพิ่ม ลบ แก้ไข ข้อมูลพื้นฐานของรายชื่อผู้จัดการแข่งขันในแต่ละเขตพื้นที่
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="v-pills-a4" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="จัดการสตาฟ (Staff Data)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img" alt="Staff Data">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Staff Management</h4>
+                        <p class="text-muted">จัดการข้อมูลพื้นฐานของสตาฟ และทีมงานเบื้องหลังทั้งหมด</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="v-pills-a5" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="จัดการร้านค้า (Shop Data)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img" alt="Shop Data">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Shops Management</h4>
+                        <p class="text-muted">บริหารจัดการข้อมูลร้านค้าที่เข้าร่วมภายในงานแข่งขัน</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="v-pills-a6" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="จัดการกิจกรรม (Activities)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img" alt="Activities">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Manage Activities</h4>
+                        <p class="text-muted">สร้าง แก้ไข หรือลบตารางกิจกรรมหลักที่เกิดขึ้นตลอดระยะเวลาของโครงการ</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="v-pills-a7" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="มอบหมายผู้จัดการ (Assign Managers)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                          alt="Assign Managers">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Assign Managers</h4>
+                        <p class="text-muted">ระบบกำหนดสิทธิ์และมอบหมายความรับผิดชอบกิจกรรมต่างๆ ให้กับผู้จัดการแต่ละคน
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="v-pills-a8" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="ผู้ช่วยแอดมิน (Admin Assistants)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                          alt="Admin Assistants">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Admin Assistants</h4>
+                        <p class="text-muted">จัดการระดับสิทธิ์การเข้าถึงระบบสำหรับบัญชีผู้ช่วยแอดมิน (Role Control)</p>
+                      </div>
+                    </div>ป
+                  </div>
+
+                  <div class="tab-pane fade" id="v-pills-a9" role="tabpanel">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                      <div class="photo-stack game-gallery-btn" data-title="รายงานสำหรับแอดมิน (Admin Reports)"
+                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
+                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                          alt="Admin Reports">
+                      </div>
+                      <div class="card-body p-4 bg-white text-center">
+                        <h4 class="fw-bold">Admin Reports</h4>
+                        <p class="text-muted">สรุปรายงานภาพรวมระบบขั้นสูง พร้อมส่งออกข้อมูล (Export Data) สำหรับผู้ดูแล
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
+
+    </section>
 
     </section>
   </main>
@@ -144,6 +494,31 @@
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
+  <div class="modal fade" id="gameGalleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content"
+        style="background-color: #1a1a2e; border: 1px solid #303050; border-radius: 15px; box-shadow: 0 0 40px rgba(0,0,0,0.8);">
+
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title text-light fw-bold" id="gameModalTitle">Title</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body text-center pt-2 pb-4">
+          <div class="mb-4"
+            style="min-height: 40vh; display: flex; align-items: center; justify-content: center; background: #0f0f1a; border-radius: 10px; padding: 15px;">
+            <img id="gameMainImg" src="" class="img-fluid rounded"
+              style="max-height: 65vh; object-fit: contain; transition: opacity 0.3s ease;" alt="Main View">
+          </div>
+
+          <div class="d-flex justify-content-center flex-wrap gap-2 p-3 mx-auto" id="gameThumbnails"
+            style="background: rgba(0,0,0,0.4); border-radius: 12px; border: 1px solid #303050; max-width: fit-content;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <div id="preloader"></div>
 

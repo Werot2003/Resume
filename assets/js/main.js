@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -37,7 +37,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -118,7 +118,7 @@
     new Waypoint({
       element: item,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = item.querySelectorAll('.progress .progress-bar');
         progress.forEach(el => {
           el.style.width = el.getAttribute('aria-valuenow') + '%';
@@ -137,13 +137,13 @@
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+  document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
       initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
@@ -152,8 +152,8 @@
       });
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+      filters.addEventListener('click', function () {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
@@ -171,7 +171,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -189,7 +189,7 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -227,3 +227,64 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+/**
+ * ========================================================
+ * Game Inventory Gallery Modal Logic
+ * ========================================================
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const triggers = document.querySelectorAll('.game-gallery-btn');
+  const mainImg = document.getElementById('gameMainImg');
+  const title = document.getElementById('gameModalTitle');
+  const thumbContainer = document.getElementById('gameThumbnails');
+
+  if (triggers.length > 0 && mainImg && title && thumbContainer) {
+    triggers.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const imagesStr = this.getAttribute('data-images');
+        if (!imagesStr) return;
+
+        const images = imagesStr.split(',');
+        title.innerText = this.getAttribute('data-title');
+
+        // โหลดรูปแรกลงจอใหญ่
+        mainImg.style.opacity = 0;
+        mainImg.src = images[0];
+        setTimeout(() => mainImg.style.opacity = 1, 50);
+
+        // ล้างช่องสล็อตเก่าทิ้ง
+        thumbContainer.innerHTML = '';
+
+        // สร้างช่องสล็อตใหม่ตามจำนวนรูป
+        images.forEach((src, index) => {
+          const slot = document.createElement('div');
+          slot.className = 'inventory-slot' + (index === 0 ? ' active-slot' : '');
+
+          const thumb = document.createElement('img');
+          thumb.src = src;
+          slot.appendChild(thumb);
+
+          // เมื่อกดที่ช่องสล็อต
+          slot.onclick = function () {
+            // เปลี่ยนรูปหลักให้มีจังหวะกระพริบนิดๆ
+            mainImg.style.opacity = 0;
+            setTimeout(() => {
+              mainImg.src = src;
+              mainImg.style.opacity = 1;
+            }, 150);
+
+            // เปลี่ยนขอบเรืองแสงมาที่สล็อตที่เลือก
+            document.querySelectorAll('.inventory-slot').forEach(t => t.classList.remove('active-slot'));
+            this.classList.add('active-slot');
+          };
+          thumbContainer.appendChild(slot);
+        });
+
+        // เปิดหน้าต่าง Modal
+        const modal = new bootstrap.Modal(document.getElementById('gameGalleryModal'));
+        modal.show();
+      });
+    });
+  }
+});
