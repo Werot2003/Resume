@@ -103,7 +103,8 @@
           <div class="tab-pane fade show active" id="role-manager" role="tabpanel">
             <div class="row">
               <div class="col-lg-4 col-md-5 mb-4">
-                <h4 class="mb-4 fw-bold" style="color: var(--heading-color);">โมดูลฝั่งผู้จัดการแข่งขัน</h4>
+                <h4 class="mb-4 fw-bold module-header-title" style="color: var(--heading-color);">
+                  โมดูลฝั่งผู้จัดการแข่งขัน</h4>
                 <div class="nav flex-column nav-pills custom-pills" id="v-pills-tab" role="tablist"
                   aria-orientation="vertical">
                   <button class="nav-link active" id="v-pills-p1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-p1"
@@ -290,7 +291,8 @@
           <div class="tab-pane fade" id="role-admin" role="tabpanel">
             <div class="row">
               <div class="col-lg-4 col-md-5 mb-4">
-                <h4 class="mb-4 fw-bold" style="color: var(--heading-color);">โมดูลฝั่งผู้ดูแลระบบ (Admin)</h4>
+                <h4 class="mb-4 fw-bold module-header-title" style="color: var(--heading-color);">โมดูลฝั่งผู้ดูแลระบบ
+                  (Admin)</h4>
                 <div class="nav flex-column nav-pills custom-pills" id="v-pills-admin-tab" role="tablist"
                   aria-orientation="vertical">
 
@@ -521,6 +523,22 @@
   </div>
 
   <div id="preloader"></div>
+
+  <button id="mobile-module-fab" class="btn btn-primary shadow" data-bs-toggle="offcanvas"
+    data-bs-target="#mobileModuleMenu">
+    <i class="bi bi-list-ul"></i>
+  </button>
+
+  <div class="offcanvas offcanvas-bottom rounded-top-4" tabindex="-1" id="mobileModuleMenu" style="max-height: 80vh;">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" style="color: var(--heading-color);">
+        <i class="bi bi-collection me-2 text-primary"></i> เลือกโมดูล
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="mobileModuleMenuBody">
+    </div>
+  </div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>

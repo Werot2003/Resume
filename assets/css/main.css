@@ -1108,7 +1108,7 @@ section,
 .custom-pills .nav-link.active {
   background: var(--accent-color);
   color: var(--contrast-color);
-  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 50%);
+  /* box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 50%); */
 }
 
 .custom-pills .nav-link i {
@@ -1272,11 +1272,101 @@ section,
   /* ยืดออกแนวนอนเพื่อโชว์ข้อความ */
   background: var(--accent-color);
   color: var(--contrast-color);
-  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+  /* box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%); */
 }
 
 #role-tab .role-animated-btn:hover span,
 #role-tab .role-animated-btn.active span {
   opacity: 1;
   /* เฟดข้อความขึ้นมา */
+}
+
+/* ==========================================================================
+   Mobile Module FAB & "Merge" Animations
+   ========================================================================== */
+#mobile-module-fab {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  /* เปลี่ยนจาก right เป็น left ย้ายมาซ้ายแล้ว */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1050;
+  border: none;
+  opacity: 0;
+  transform: scale(0) rotate(-180deg);
+  /* ปรับมุมหมุนนิดหน่อยให้สมูทเวลาโผล่ทางซ้าย */
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  pointer-events: none;
+}
+
+#mobile-module-fab.show {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  pointer-events: auto;
+}
+
+#mobile-module-fab:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 15%);
+  transform: scale(1.1);
+}
+
+/* แอนิเมชันและตั้งค่าสำหรับหน้าจอมือถือ (จอเล็กกว่า 768px) */
+@media (max-width: 767px) {
+  .custom-pills .nav-link {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center right;
+  }
+
+/* เมื่อคลาส .mobile-hide-pills ทำงาน (เราเลื่อนจอลงมาลึกแล้ว) */
+  .mobile-hide-pills .custom-pills .nav-link {
+    opacity: 0;
+    /* เปลี่ยนทิศทาง บินไปมุมล่างซ้ายแทน (ค่า X ติดลบ) */
+    transform: translate(-100px, 150px) scale(0.1);
+    margin-bottom: -56px; 
+    pointer-events: none;
+  }
+
+  /* Stagger Effect: ให้เมนูค่อยๆ บินตามกันไปทีละอัน โคตรเท่! */
+  .mobile-hide-pills .custom-pills .nav-link:nth-child(1) {
+    transition-delay: 0.0s;
+  }
+
+  .mobile-hide-pills .custom-pills .nav-link:nth-child(2) {
+    transition-delay: 0.03s;
+  }
+
+  .mobile-hide-pills .custom-pills .nav-link:nth-child(3) {
+    transition-delay: 0.06s;
+  }
+
+  .mobile-hide-pills .custom-pills .nav-link:nth-child(4) {
+    transition-delay: 0.09s;
+  }
+
+  .mobile-hide-pills .custom-pills .nav-link:nth-child(5) {
+    transition-delay: 0.12s;
+  }
+
+  .mobile-hide-pills .custom-pills .nav-link:nth-child(n+6) {
+    transition-delay: 0.15s;
+  }
+
+  /* ปรับแต่งเมนูตอนมันไปอยู่ใน Offcanvas (กล่องที่เด้งขึ้นมาจากขอบล่าง) */
+  #mobileModuleMenuBody .custom-pills .nav-link {
+    opacity: 1;
+    transform: none;
+    margin-bottom: 10px;
+    pointer-events: auto;
+    font-size: 16px;
+    text-align: center;
+  }
 }

@@ -288,3 +288,92 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+/**
+ * ========================================================
+ * Mobile Module FAB & Auto Merge Animation
+ * ========================================================
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const fab = document.getElementById('mobile-module-fab');
+
+  // ตรวจจับการเลื่อนจอ (Scroll)
+  window.addEventListener('scroll', () => {
+    // ถ้าเป็นหน้าจอคอมพิวเตอร์ (>= 768px) ไม่ต้องทำอะไรเลย
+    if (window.innerWidth >= 768) {
+      document.body.classList.remove('mobile-hide-pills');
+      if (fab) fab.classList.remove('show');
+      return;
+    }
+
+    // หาหัวข้อ (Header) ฝั่งที่กำลังเปิดใช้งานอยู่
+    const activeHeader = document.querySelector('.tab-pane.active .module-header-title');
+
+    if (activeHeader) {
+      const headerRect = activeHeader.getBoundingClientRect();
+
+      // ถ้าเลื่อนจนหัวข้อทะลุขอบจอด้านบนไปแล้ว (น้อยกว่า 50px)
+      if (headerRect.bottom < 50) {
+        document.body.classList.add('mobile-hide-pills'); // ซ่อนเมนูเดิม (เริ่มแอนิเมชัน)
+        if (fab) fab.classList.add('show'); // โชว์ปุ่มกลม
+      } else {
+        document.body.classList.remove('mobile-hide-pills'); // เอาเมนูกลับมา
+        if (fab) fab.classList.remove('show'); // ซ่อนปุ่มกลม
+      }
+    }
+  });
+
+  // เวลากดปุ่มลอย (FAB) ให้ก๊อปปี้เมนูลงไปใส่ในแผง Offcanvas
+  if (fab) {
+    fab.addEventListener('click', () => {
+      const activePillsContainer = document.querySelector('.tab-pane.active .custom-pills');
+      const offcanvasBody = document.getElementById('mobileModuleMenuBody');
+
+      if (activePillsContainer && offcanvasBody) {
+        offcanvasBody.innerHTML = ''; // ล้างข้อมูลเก่าออกก่อน
+
+        // โคลนเมนูชุดเดิมมา
+        const clonedPills = activePillsContainer.cloneNode(true);
+        clonedPills.removeAttribute('id'); // ลบ ID ทิ้งป้องกันบั๊กซ้ำ
+
+        const originalBtns = activePillsContainer.querySelectorAll('.nav-link');
+        const clonedBtns = clonedPills.querySelectorAll('.nav-link');
+
+        clonedBtns.forEach((btn, index) => {
+          btn.removeAttribute('id');
+          btn.removeAttribute('data-bs-target'); // ยกเลิกแอคชันเดิมของ Bootstrap บนตัวโคลน
+
+          // สั่งให้เวลากดเมนูบนหน้าต่างมือถือ มันไปสั่งกดปุ่มตัวจริงด้านหลังอีกที
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            originalBtns[index].click();
+
+            // ปิดแผงเมนูมือถือ
+            const offcanvasEl = document.getElementById('mobileModuleMenu');
+            const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl) || new bootstrap.Offcanvas(offcanvasEl);
+            bsOffcanvas.hide();
+
+            // เลื่อนจอกลับมานิดนึงเพื่อให้เห็นรูปภาพแกลเลอรี่ชัดๆ
+            setTimeout(() => {
+              const activeHeader = document.querySelector('.tab-pane.active .module-header-title');
+              if (activeHeader) {
+                const y = activeHeader.getBoundingClientRect().top + window.scrollY - 20;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+              }
+            }, 300);
+          });
+        });
+
+        // เอาเมนูที่โคลนแล้วยัดใส่ลงไป
+        offcanvasBody.appendChild(clonedPills);
+      }
+    });
+  }
+
+  // เผื่อผู้ใช้กดสลับ Role (จาก Manager เป็น Admin) ให้รีเฟรชเช็กตำแหน่งจอใหม่
+  document.querySelectorAll('.role-animated-btn').forEach(btn => {
+    btn.addEventListener('shown.bs.tab', () => {
+      window.dispatchEvent(new Event('scroll'));
+    });
+  });
+});
