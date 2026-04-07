@@ -291,20 +291,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /**
  * ========================================================
- * Mobile Module FAB & Auto Merge Animation
+ * Mobile Module FAB & Auto Merge Animation (Fold Once)
  * ========================================================
  */
 document.addEventListener("DOMContentLoaded", function () {
   const fab = document.getElementById('mobile-module-fab');
 
+  // เพิ่มตัวแปรเช็กว่า "พับไปแล้วหรือยัง"
+  let hasFolded = false;
+
   // ตรวจจับการเลื่อนจอ (Scroll)
   window.addEventListener('scroll', () => {
-    // ถ้าเป็นหน้าจอคอมพิวเตอร์ (>= 768px) ไม่ต้องทำอะไรเลย
+    // ถ้าเป็นหน้าจอคอมพิวเตอร์ (>= 768px) ให้รีเซ็ตค่ากลับเป็นปกติ
     if (window.innerWidth >= 768) {
       document.body.classList.remove('mobile-hide-pills');
       if (fab) fab.classList.remove('show');
+      hasFolded = false; // เผื่อเขายืดหดจอ
       return;
     }
+
+    // ถ้าพับไปแล้ว ก็ไม่ต้องทำอะไรต่อ จบปิ๊ง!
+    if (hasFolded) return;
 
     // หาหัวข้อ (Header) ฝั่งที่กำลังเปิดใช้งานอยู่
     const activeHeader = document.querySelector('.tab-pane.active .module-header-title');
@@ -316,14 +323,15 @@ document.addEventListener("DOMContentLoaded", function () {
       if (headerRect.bottom < 50) {
         document.body.classList.add('mobile-hide-pills'); // ซ่อนเมนูเดิม (เริ่มแอนิเมชัน)
         if (fab) fab.classList.add('show'); // โชว์ปุ่มกลม
-      } else {
-        document.body.classList.remove('mobile-hide-pills'); // เอาเมนูกลับมา
-        if (fab) fab.classList.remove('show'); // ซ่อนปุ่มกลม
+        hasFolded = true; // บันทึกไว้ว่า "พับเรียบร้อยแล้วจ้า" จะได้ไม่กางอีก
       }
+      // ลบคำสั่ง else ทิ้งไปเลย เพราะเราจะไม่ให้มันกางออกแล้ว
     }
   });
 
-  // เวลากดปุ่มลอย (FAB) ให้ก๊อปปี้เมนูลงไปใส่ในแผง Offcanvas
+  // =======================================================
+  // โค้ดส่วนที่เหลือ (เวลากดปุ่ม FAB ให้ก๊อปปี้เมนู) ปล่อยไว้เหมือนเดิมครับ
+  // =======================================================
   if (fab) {
     fab.addEventListener('click', () => {
       const activePillsContainer = document.querySelector('.tab-pane.active .custom-pills');
@@ -334,16 +342,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // โคลนเมนูชุดเดิมมา
         const clonedPills = activePillsContainer.cloneNode(true);
-        clonedPills.removeAttribute('id'); // ลบ ID ทิ้งป้องกันบั๊กซ้ำ
+        clonedPills.removeAttribute('id');
 
         const originalBtns = activePillsContainer.querySelectorAll('.nav-link');
         const clonedBtns = clonedPills.querySelectorAll('.nav-link');
 
         clonedBtns.forEach((btn, index) => {
           btn.removeAttribute('id');
-          btn.removeAttribute('data-bs-target'); // ยกเลิกแอคชันเดิมของ Bootstrap บนตัวโคลน
+          btn.removeAttribute('data-bs-target');
 
-          // สั่งให้เวลากดเมนูบนหน้าต่างมือถือ มันไปสั่งกดปุ่มตัวจริงด้านหลังอีกที
           btn.addEventListener('click', (e) => {
             e.preventDefault();
             originalBtns[index].click();
@@ -353,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl) || new bootstrap.Offcanvas(offcanvasEl);
             bsOffcanvas.hide();
 
-            // เลื่อนจอกลับมานิดนึงเพื่อให้เห็นรูปภาพแกลเลอรี่ชัดๆ
+            // เลื่อนจอกลับมาให้เห็นแกลเลอรี่
             setTimeout(() => {
               const activeHeader = document.querySelector('.tab-pane.active .module-header-title');
               if (activeHeader) {
@@ -364,15 +371,17 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
 
-        // เอาเมนูที่โคลนแล้วยัดใส่ลงไป
         offcanvasBody.appendChild(clonedPills);
       }
     });
   }
 
-  // เผื่อผู้ใช้กดสลับ Role (จาก Manager เป็น Admin) ให้รีเฟรชเช็กตำแหน่งจอใหม่
+  // เผื่อผู้ใช้กดสลับ Role 
   document.querySelectorAll('.role-animated-btn').forEach(btn => {
     btn.addEventListener('shown.bs.tab', () => {
+      hasFolded = false; // รีเซ็ตใหม่เมื่อสลับแท็บ เพื่อให้มันเช็กตำแหน่งใหม่
+      document.body.classList.remove('mobile-hide-pills');
+      if (fab) fab.classList.remove('show');
       window.dispatchEvent(new Event('scroll'));
     });
   });

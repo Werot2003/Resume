@@ -1287,23 +1287,32 @@ section,
 #mobile-module-fab {
   position: fixed;
   bottom: 25px;
+  /* ตำแหน่งเดิม */
   left: 25px;
-  /* เปลี่ยนจาก right เป็น left ย้ายมาซ้ายแล้ว */
-  width: 60px;
-  height: 60px;
+  /* อยู่ฝั่งซ้ายตามที่ขอไว้ */
+
+  /* --- ส่วนที่ปรับขนาดใหม่ --- */
+  width: 48px;
+  /* ลดลงจาก 60px เพื่อให้เท่ากับปุ่มขวา */
+  height: 48px;
+  /* ลดลงจาก 60px */
+  font-size: 20px;
+  /* ลดขนาดไอคอนลงให้เข้ากับขนาดปุ่ม */
+  /* -------------------------- */
+
   border-radius: 50%;
   background-color: var(--accent-color);
   color: var(--contrast-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  /* ปรับ Shadow ให้เบาลงนิดหน่อยให้เข้ากับขนาด */
   z-index: 1050;
   border: none;
+  /* ซ่อนไว้ก่อนแบบเด้งดึ๋ง */
   opacity: 0;
   transform: scale(0) rotate(-180deg);
-  /* ปรับมุมหมุนนิดหน่อยให้สมูทเวลาโผล่ทางซ้าย */
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   pointer-events: none;
 }
@@ -1326,12 +1335,12 @@ section,
     transform-origin: center right;
   }
 
-/* เมื่อคลาส .mobile-hide-pills ทำงาน (เราเลื่อนจอลงมาลึกแล้ว) */
+  /* เมื่อคลาส .mobile-hide-pills ทำงาน (เราเลื่อนจอลงมาลึกแล้ว) */
   .mobile-hide-pills .custom-pills .nav-link {
     opacity: 0;
     /* เปลี่ยนทิศทาง บินไปมุมล่างซ้ายแทน (ค่า X ติดลบ) */
     transform: translate(-100px, 150px) scale(0.1);
-    margin-bottom: -56px; 
+    margin-bottom: -56px;
     pointer-events: none;
   }
 
@@ -1368,5 +1377,65 @@ section,
     pointer-events: auto;
     font-size: 16px;
     text-align: center;
+  }
+}
+
+/* ==========================================================================
+   ปรับแต่งกล่อง Offcanvas ให้เป็น Floating Card (ตรงตามแบบรูปที่ 2)
+   ========================================================================== */
+@media (max-width: 767px) {
+
+  /* 1. เปลี่ยนกล่องที่ติดขอบ ให้ลอยขึ้นและโค้งมน 4 ด้าน */
+  #mobileModuleMenu.offcanvas-bottom {
+    height: auto;
+    max-height: 75vh !important;
+    bottom: 15px;
+    /* ลอยจากขอบล่าง 15px */
+    left: 15px;
+    /* ลอยจากขอบซ้าย 15px */
+    right: 15px;
+    /* ลอยจากขอบขวา 15px */
+    width: auto;
+    border-radius: 28px !important;
+    /* มุมโค้งมนน่ารักๆ ตามรูป 2 */
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* 2. ทริคแก้บั๊ก: สั่งให้กล่องซ่อนลงไปให้ลึกกว่าเดิม ไม่งั้นจะมีติ่งโผล่ที่ขอบล่าง */
+  #mobileModuleMenu.offcanvas-bottom:not(.show):not(.showing) {
+    transform: translateY(calc(100% + 30px)) !important;
+  }
+
+  /* 3. ดันเนื้อหาขึ้น เพื่อไม่ให้ปุ่ม FAB (ที่ลอยอยู่มุมซ้ายล่าง) บังข้อความเมนู */
+  #mobileModuleMenu .offcanvas-body {
+    padding: 15px 15px 85px 15px;
+    scrollbar-width: thin;
+    /* ปรับ Scrollbar ให้ดูมินิมอล */
+  }
+
+  /* 4. ตกแต่งเส้นขอบส่วนหัวนิดหน่อย */
+  #mobileModuleMenu .offcanvas-header {
+    border-bottom: 1px dashed color-mix(in srgb, var(--default-color), transparent 85%) !important;
+    padding: 20px;
+    border-radius: 28px 28px 0 0;
+  }
+
+  /* 5. ปรับหน้าตาปุ่มข้างในให้มนๆ เข้ากับตัวกล่องหลัก */
+  #mobileModuleMenuBody .custom-pills .nav-link {
+    border-radius: 14px;
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    background: color-mix(in srgb, var(--default-color), transparent 96%);
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  /* เวลาเอานิ้วจิ้มหรือเลือกปุ่มอยู่ ให้มีลูกเล่นแสงเงา */
+  #mobileModuleMenuBody .custom-pills .nav-link:hover,
+  #mobileModuleMenuBody .custom-pills .nav-link.active {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    box-shadow: 0 4px 10px color-mix(in srgb, var(--accent-color), transparent 70%);
   }
 }
