@@ -1439,3 +1439,48 @@ section,
     box-shadow: 0 4px 10px color-mix(in srgb, var(--accent-color), transparent 70%);
   }
 }
+
+/* --- ส่วนจัดการธงไทยบนการ์ดผลงาน --- */
+
+/* กำหนดให้ Parent (a tag) เป็น Relative เพื่อให้ธงอ้างอิงตำแหน่งได้ถูกต้อง */
+.portfolio-card-link {
+  position: relative;
+  display: block;
+  /* มั่นใจว่าเป็น block element */
+  overflow: hidden;
+  /* ป้องกันเนื้อหาธงหลุดขอบ (ถ้าทำ animation) */
+}
+
+/* สร้างธงไทยวงกลม (CSS-only gradient) */
+.thai-flag-badge {
+  position: absolute;
+  top: 15px;
+  /* ระยะห่างจากด้านบน */
+  right: 15px;
+  /* ระยะห่างจากด้านขวา */
+  width: 35px;
+  /* ขนาดเส้นผ่านศูนย์กลาง */
+  height: 35px;
+  border-radius: 50%;
+  /* ทำรูปทรงวงกลม */
+  border: 2px solid #ffffff;
+  /* ขอบสีขาวเพื่อให้ตัดกับรูปภาพ */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* เพิ่มเงาให้ดูมีมิติ */
+  z-index: 10;
+  /* มั่นใจว่าอยู่เหนือรูปภาพเสมอ */
+
+  /* วาดลายธงไทยด้วย CSS Linear Gradient (สัดส่วนสี แดง1:ขาว1:น้ำเงิน2:ขาว1:แดง1) */
+  background: linear-gradient(to bottom,
+      #ED1C24 0% 16.66%,
+      /* แดง (บน) */
+      #FFFFFF 16.66% 33.33%,
+      /* ขาว */
+      #243589 33.33% 66.66%,
+      /* น้ำเงิน (กลาง-กว้างสุด) */
+      #FFFFFF 66.66% 83.33%,
+      /* ขาว */
+      #ED1C24 83.33% 100%
+      /* แดง (ล่าง) */
+    );
+}
