@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght=0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,11 +62,38 @@
 
         <div class="row justify-content-between gy-4 mb-5">
           <div class="col-lg-8">
-            <h2 class="fw-bold">ACADEMIC COMPETITION MANAGEMENT SYSTEM FOR ECO 9RMUTI</h2>
-            <p><em>Full-Stack Developer (Backend-Focused) | Web-based Application</em></p>
-            <p>ระบบจัดการแข่งขันวิชาการสำหรับ มทร.อีสาน วิทยาเขตขอนแก่น ออกแบบมาเพื่อบริหารจัดการแข่งขันวิชาการของ 9
-              มทร. เน้นการทำงานแบบอัตโนมัติ ลดขั้นตอนการทำงานที่ซ้ำซ้อน (Streamlining workflows)
-              และมีระบบประมวลผลหลังบ้านที่แม่นยำ</p>
+            <h2 class="fw-bold text-uppercase">Academic Competition Management System (9RMUTI)</h2>
+            <p class="badge bg-primary px-3 py-2">Full-Stack Developer (Backend-Focused)</p>
+
+            <div class="mt-4">
+              <p>
+                ระบบบริหารจัดการการแข่งขันวิชาการระดับมหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน (9 มทร.)
+                ที่ออกแบบมาเพื่อเปลี่ยนผ่านกระบวนการทำงานแบบ Manual สู่ระบบ Digital Workflow เต็มรูปแบบ
+                เน้นการจัดการข้อมูลที่ซับซ้อนให้กลายเป็นเรื่องง่ายสำหรับทั้งผู้จัดการแข่งขันและทีมงานเบื้องหลัง
+              </p>
+
+              <h5 class="fw-bold mt-4 mb-3"><i class=" me-2 text-primary"></i>Core System
+                Architecture & Security</h5>
+              <div class="text-muted text-start border-start border-4 border-primary ps-3">
+                ความโดดเด่นของโปรเจกต์นี้คือการวางระบบ <b>Centralized Authentication & Session Management</b> ที่รัดกุม
+                โดยมีการทำงานที่สอดประสานกันในทุกเลเยอร์:
+                <ul class="mt-2 pl-3">
+                  <li class="mb-2"><b>Cross-Layer Session Validation:</b> ระบบมีการตรวจสอบสิทธิ์ (Session Verification)
+                    ทั้งในฝั่ง Client-side ผ่าน JavaScript เพื่อควบคุมการแสดงผลเมนู และฝั่ง Server-side (PHP Session)
+                    เพื่อดักจับการเข้าถึง API โดยไม่ได้รับอนุญาต (Unauthorized Access Protection)</li>
+                  <li class="mb-2"><b>Zero-Flicker Role Control:</b> ใช้เทคนิคการตรวจสอบสถานะสิทธิ์จาก Local Storage
+                    ควบคู่กับการยืนยันผ่าน API แบบ Asynchronous เพื่อลดอาการ "เมนูกระพริบ" ขณะโหลดหน้าเว็บ
+                    ช่วยให้ประสบการณ์การใช้งาน (UX) ราบรื่นและดูเป็นมืออาชีพ</li>
+                  <li class="mb-2"><b>Modular API Design:</b> โครงสร้างระบบแยกส่วน (Decoupled) ระหว่างส่วนควบคุม (Logic)
+                    และส่วนจัดเก็บข้อมูล (Database) ทำให้สามารถขยายขีดความสามารถของโมดูลต่างๆ เช่น ระบบสุ่มทีม
+                    (Matchmaking) หรือระบบเครดิต ได้โดยไม่กระทบต่อโครงสร้างหลัก</li>
+                  <li><b>Data Integrity Guardrails:</b> การทำรายการสำคัญจะถูกควบคุมด้วย Database Transactions และ
+                    Foreign Key Constraints
+                    เพื่อการันตีว่าข้อมูลโครงการและรายชื่อผู้เข้าแข่งขันจะมีความถูกต้องและเชื่อมโยงกันเสมอ (Referential
+                    Integrity)</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="col-lg-4">
             <div class="portfolio-info" style="margin-top: 0;">
@@ -143,8 +170,18 @@
                         <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img" alt="Dashboard">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Dashboard</h4>
-                        <p class="text-muted">Real-time statistics and system overview. (คลิกรูปเพื่อเปิดแกลเลอรี่)</p>
+                        <h4 class="fw-bold">System Dashboard & Data Aggregation</h4>
+                        <p class="text-muted text-start">
+                          โมดูลแสดงผลและรวบรวมข้อมูลภาพรวม (Data Aggregation) พัฒนาด้วยรูปแบบ Client-Side Rendering
+                          (CSR)
+                          เริ่มต้นด้วยการตรวจสอบ Authentication State ผ่าน Local Storage หากผ่านเงื่อนไข ระบบจะทำ
+                          Asynchronous Request ผ่าน jQuery AJAX
+                          ไปยัง PHP Backend API หลายเส้นทาง (Parallel Fetching) เพื่อรับข้อมูล JSON กลับมาประมวลผลฝั่ง
+                          Client
+                          อาทิ การใช้ Array Manipulation คัดกรองข้อมูล 5 รายการล่าสุด และคำนวณสัดส่วนข้อมูล (เช่น สถานะ
+                          Approved/Pending)
+                          เพื่อทำ Dynamic DOM Manipulation อัปเดต UI, Progress Bar และ Data Table แบบ Real-time ทันที
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -156,7 +193,17 @@
                       </div>
                       <div class="card-body p-4 bg-white text-center">
                         <h4 class="fw-bold">Team Approval</h4>
-                        <p class="text-muted">Verify and approve team registrations.</p>
+                        <p class="text-muted text-start">
+                          โมดูลตรวจสอบเอกสารที่ออกแบบมาเพื่อลดภาระ Server โดยใช้ Client-side Pagination และ Filtering
+                          ในการจัดการ Data Array ฝั่ง Front-end พร้อมเสริม UX ด้วย Draggable Modal (jQuery UI) และระบบ
+                          File Preview (PDF/Image)
+                          <br><br>
+                          <strong>จุดเด่น (Core Logic):</strong> เมื่อผู้จัดการกด "อนุมัติ" (POST Request) ระบบ Back-end
+                          จะไม่เพียงแค่อัปเดตสถานะ แต่จะ Trigger กระบวนการ <i>Automated Account Provisioning</i>
+                          ทำการสุ่มรหัสผ่าน (Random Password Generation) สร้างบัญชีผู้ใช้ให้สมาชิกทุกคนในทีมทันที
+                          พร้อมบูรณาการไลบรารี <b>PHPMailer (SMTP)</b> เพื่อส่งอีเมลแจ้ง Credentials
+                          แจ้งไปยังผู้เข้าแข่งขันแบบอัตโนมัติ
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -167,8 +214,31 @@
                         <img src="assets/img/portfolio/pj4.png" class="img-fluid w-100 main-stack-img" alt="Management">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Team Management</h4>
-                        <p class="text-muted">CRUD operations for competition teams.</p>
+                        <h4 class="fw-bold">Advanced Team CRUD & Multi-Layer Validation</h4>
+                        <div class="text-muted text-start mt-3">
+                          ระบบจัดการข้อมูลทีมและสมาชิกที่ออกแบบมาให้มีความรัดกุมสูง (Robust System) ผ่านการเขียน Logic
+                          ดักจับข้อผิดพลาดและตรวจสอบความถูกต้องของข้อมูลแบบหลายชั้น (Multi-Layer Validation)
+                          เพื่อป้องกัน Human Error และรักษาความสมบูรณ์ของฐานข้อมูล (Data Integrity)
+                          <br><br>
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Strict Quota Control:</b> ระบบควบคุมโควตาสมาชิกและอาจารย์แบบ Real-time
+                              ดักจับตั้งแต่ฝั่ง Client-side (ใช้ JS Auto-cap จำกัดตัวเลขที่กรอก และ Disable
+                              ปุ่มเมื่อโควตาเต็ม) ไปจนถึงฝั่ง Server-side (PHP Query ตรวจสอบยอด Active Member ก่อน
+                              Insert)</li>
+                            <li class="mb-2"><b>Safe Relational Delete:</b> ยกระดับความปลอดภัยในการลบข้อมูล (Delete
+                              Operation) ด้วย Dependency Check ระบบจะปฏิเสธการลบทีมทันที
+                              หากตรวจพบว่าทีมนั้นยังมีสมาชิกอยู่ หรือมีความสัมพันธ์กับตารางผลการแข่งขัน
+                              เพื่อป้องกันปัญหา Foreign Key Error และ Data Loss</li>
+                            <li class="mb-2"><b>Dynamic Input Interception:</b> ใช้ Regular Expression (Regex)
+                              ดักจับและปฏิเสธอักขระพิเศษแบบ Real-time พร้อมสร้าง Custom Autocomplete
+                              ค้นหารายชื่อสถาบันจาก JSON API และระบบปรับเปลี่ยน Form Input อัตโนมัติ
+                              (ซ่อน/แสดงช่องอัปโหลดไฟล์ตาม Role ของผู้เข้าแข่ง)</li>
+                            <li><b>Smart Data Filtering:</b> ลดภาระฝั่ง Server ด้วยการประมวลผล Array ฝั่ง Front-end เช่น
+                              การคำนวณหา "ทีมที่ข้อมูลไม่ครบ" (Incomplete Teams)
+                              โดยอิงจากเงื่อนไขความต่างระหว่างจำนวนสมาชิกจริงกับโควตาที่รายการกำหนด</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -180,8 +250,32 @@
                           alt="Participant">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Participant Management</h4>
-                        <p class="text-muted">Manage individual participant profiles.</p>
+                        <h4 class="fw-bold">Participant & Account Management</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลบริหารจัดการข้อมูลผู้เข้าแข่งขันรายบุคคลเชิงลึก (Deep-level CRUD)
+                          พร้อมระบบควบคุมการเข้าถึง (Access Control) และการจัดการสถานะบัญชีแบบไดนามิก
+                          <br><br>
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Advanced Multi-Criteria Filtering:</b>
+                              ระบบคัดกรองข้อมูลขั้นสูงแบบหลายเงื่อนไข (ทีม, สถาบัน, บทบาท, เพศ, สถานะ) โดยใช้ AJAX
+                              ดึงตัวเลือก Dropdown จากฐานข้อมูลแบบ Dynamic (แสดงเฉพาะข้อมูลที่มีจริงในกิจกรรมนั้นๆ)
+                              ผสานการทำงานร่วมกับ Backend API ที่ประกอบ SQL Query ด้วย Dynamic <code>WHERE</code> Clause
+                              ช่วยให้จัดการข้อมูลจำนวนมากได้อย่างมีประสิทธิภาพ</li>
+                            <li class="mb-2"><b>Smart Status & Quota Interception:</b> อัลกอริทึมตรวจสอบโควตาระดับ
+                              Backend (PHP) ป้องกันการเปิดสถานะใช้งาน (Active) ทะลุลิมิต โดยแยกลอจิกการคำนวณโควตาระหว่าง
+                              "ผู้เข้าแข่งขัน" และ "ผู้ควบคุมทีม" อย่างเด็ดขาด
+                              พร้อมรองรับการเช็คโควตาระหว่างทำรายการแบบกลุ่ม (Batch Status Update)</li>
+                            <li class="mb-2"><b>Batch Operations & Debounced Search:</b>
+                              รองรับการอัปเดตสถานะแบบกลุ่มผ่าน Floating Toolbar ที่ตอบสนองตามขนาดหน้าจอ (Responsive)
+                              และเพิ่มประสิทธิภาพช่องค้นหาด้วยเทคนิค Debouncing (500ms Delay) เพื่อลดภาระ (Load) การยิง
+                              API ซ้ำซ้อนไปยัง Server</li>
+                            <li><b>Cascading & Reactive UI:</b> ฟอร์มแก้ไขข้อมูลที่ทำงานแบบ Reactive เช่น ระบบที่อยู่แบบ
+                              Cascading Dropdown (ดึงข้อมูล Location จาก JSON API)
+                              และการซ่อน/แสดงฟิลด์ระบุการแพ้อาหารตามเงื่อนไข พร้อมระบบ Reset Password จากฝั่งผู้ดูแลระบบ
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -192,8 +286,30 @@
                         <img src="assets/img/portfolio/pj7.png" class="img-fluid w-100 main-stack-img" alt="Credit">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Credit Management</h4>
-                        <p class="text-muted">Monitor and adjust system credits.</p>
+                        <h4 class="fw-bold">Virtual Credit System & State-Dependent Updates</h4>
+                        <div class="text-muted text-start mt-3">
+                          ระบบบริหารจัดการเครดิตเสมือนสำหรับผู้เข้าแข่งขัน รองรับการจัดการข้อมูลทั้งแบบเจาะจงรายบุคคล
+                          (Granular Update) และการอัปเดตแบบกลุ่ม (Mass Overwrite) ออกแบบมาให้มีความปลอดภัยระดับ Database
+                          Layer
+                          <br><br>
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>State-Dependent Operations:</b> สถาปัตยกรรม Backend
+                              มีการบังคับใช้เงื่อนไข (Strict Constraint) ผ่าน SQL <code>INNER JOIN</code>
+                              เพื่ออัปเดตเครดิตเฉพาะสมาชิกที่สังกัดทีมสถานะ <code>'Approved'</code> เท่านั้น
+                              ป้องกันการแก้ไขข้อมูลข้ามสถานะอย่างเด็ดขาด</li>
+                            <li class="mb-2"><b>Row-Affected Validation:</b> Backend API ใช้เมธอด
+                              <code>rowCount()</code> ของ PDO เพื่อตรวจสอบและแยกแยะผลลัพธ์ระดับ Transaction อย่างแม่นยำ
+                              (เช่น อัปเดตสำเร็จ, ค่าซ้ำไม่มีการเปลี่ยนแปลง, หรือถูกบล็อกเพราะทีมยังไม่อนุมัติ)
+                            </li>
+                            <li class="mb-2"><b>Dual-Mode Batch Processing:</b> รองรับ RESTful <code>PUT</code> Request
+                              ที่สามารถสลับโหมดการทำงานได้ตาม Payload สามารถสั่งรีเซ็ตเครดิตทุกคนใน 1 กิจกรรม
+                            </li>
+                            <li><b>Client-Side Optimization:</b> ประมวลผลระบบค้นหา (Real-time Search) และแบ่งหน้าตาราง
+                              (Pagination) โดยการจัดการ Array ฝั่ง Front-end เพื่อให้ UI ตอบสนองได้ทันทีและลดจำนวน
+                              Request ที่ไม่จำเป็นไปยัง Server</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -205,8 +321,33 @@
                           alt="Result Type">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Result Categories</h4>
-                        <p class="text-muted">Define competition scoring types.</p>
+                        <h4 class="fw-bold">Competition Result Schema & Batch Management</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลสำหรับวางโครงสร้างประเภทรางวัลและเกณฑ์ผลการแข่งขัน (Result Schema)
+                          ที่เน้นความยืดหยุ่นและการจัดการข้อมูลเชิงลึกผ่านกระบวนการ Batch Processing
+
+
+
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Interactive Sortable UI:</b> บูรณาการ jQuery UI (Sortable)
+                              เพื่อรองรับการจัดลำดับความสำคัญของรางวัลด้วยการลากวาง (Drag & Drop) โดยระบบจะมีฟังก์ชัน
+                              <code>reorderCodes()</code> ทำหน้าที่ Re-indexing รหัสอ้างอิง (Alphabetical Codes A-Z)
+                              ใหม่โดยอัตโนมัติในฝั่ง Client เพื่อความถูกต้องของข้อมูลก่อนการบันทึก
+                            </li>
+                            <li class="mb-2"><b>Transactional Batch Processing:</b> สถาปัตยกรรม Backend (PHP) ใช้ระบบ
+                              Database Transactions (Begin/Commit/Rollback) ในการทำ Bulk Update และ Overwrite ข้อมูล
+                              เพื่อรักษาความสมบูรณ์ของข้อมูล (Data Integrity) ในกรณีที่มีการจัดการ Schema
+                              รางวัลจำนวนมากในคราวเดียว</li>
+                            <li class="mb-2"><b>Dual-Mode Data Entry:</b> รองรับทั้งระบบ Append (เพิ่มต่อท้าย) และ
+                              Re-initialization (ล้างและสร้างใหม่) พร้อมระบบ Dynamic Input Generation
+                              ที่สามารถสร้างช่องกรอกข้อมูลตามจำนวนที่ผู้ใช้ระบุ และทำ Smart Filtering
+                              คัดกรองค่าว่างทิ้งก่อนส่งไปยัง Database API</li>
+                            <li><b>State-Dependent UI Control:</b> จัดการหน้าจอด้วยสถานะ <code>isEditMode</code>
+                              เพื่อควบคุมการแสดงผลของ UI Elements เช่น การเปิด-ปิดช่อง Input, การสลับปุ่มดำเนินการ
+                              และการเปิดสิทธิ์การ Drag & Drop แบบ Asynchronous ตามสิทธิ์ของผู้ใช้งาน</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -217,8 +358,33 @@
                         <img src="assets/img/portfolio/pj28.png" class="img-fluid w-100 main-stack-img" alt="Round">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Round Management</h4>
-                        <p class="text-muted">Set up competition rounds and brackets.</p>
+                        <h4 class="fw-bold">Round Scheduling & Temporal Workflow Management</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลสำหรับกำหนดลำดับและช่วงเวลาของการแข่งขัน (Competition Timeline)
+                          ที่เน้นความยืดหยุ่นในการจัดการลำดับขั้นตอนผ่านระบบ Dynamic Reordering
+                          และความแม่นยำของข้อมูลเชิงเวลา
+
+
+
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Interactive Sequence Control:</b> พัฒนา UI
+                              ให้รองรับการจัดลำดับรอบการแข่งขันแบบ Drag & Drop ผ่าน jQuery UI บูรณาการร่วมกับฟังก์ชัน
+                              <code>reorderCodes()</code> เพื่อทำ Client-side Re-indexing หมายเลขรอบแบบอัตโนมัติ
+                              ช่วยให้ผู้จัดการปรับเปลี่ยนแผนการแข่งได้ทันทีโดยไม่ต้องแก้ไขทีละรายการ
+                            </li>
+                            <li class="mb-2"><b>Atomic Batch Operations:</b> Backend API ออกแบบโดยใช้ Database
+                              Transactions (PDO) เพื่อจัดการข้อมูลแบบกลุ่ม (Bulk Overwrite)
+                              ทำให้การล้างข้อมูลรอบเก่าและบันทึกโครงสร้างใหม่เป็นไปอย่างเบ็ดเสร็จ (Atomic)
+                              ป้องกันปัญหาข้อมูลค้างหรือโครงสร้างลำดับผิดเพี้ยนหากเกิด Error ระหว่างประมวลผล</li>
+                            <li class="mb-2"><b>Temporal Management:</b> ระบบรองรับการกำหนดช่วงเวลาเริ่มต้น-สิ้นสุด
+                              (Start/End DateTime) ในแต่ละรอบการแข่งขัน ผ่าน HTML5 DateTime Object พร้อม Logic
+                              การจัดการค่า NULL ในระดับ Database เพื่อรองรับรอบการแข่งขันที่ยังไม่ระบุเวลาแน่นอน</li>
+                            <li><b>Relational Guardrails:</b> ยกระดับความปลอดภัยของข้อมูลด้วยระบบดักจับ Integrity
+                              Constraint Violation หากรอบการแข่งขันนั้นๆ มีความสัมพันธ์กับข้อมูลคะแนนหรือผลการแข่งไปแล้ว
+                              ระบบจะบล็อกการลบหรือแก้ไขเชิงโครงสร้างเพื่อป้องกัน Data Inconsistency</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -229,8 +395,31 @@
                         <img src="assets/img/portfolio/pj10.png" class="img-fluid w-100 main-stack-img" alt="Results">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Competition Results</h4>
-                        <p class="text-muted">Record and calculate scores.</p>
+                        <h4 class="fw-bold">Complex Result Engine & Member Synchronization</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลประมวลผลผลการแข่งขัน ที่ทำหน้าที่บริหารจัดการข้อมูลแบบ Matrix ระหว่าง
+                          "รอบการแข่งขัน" และ "ทีมผู้สมัคร" พร้อมระบบควบคุมสถานะผู้เข้าแข่งขันแบบ Real-time
+                          <br><br>
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Asynchronous Data Aggregation:</b> ระบบดึงข้อมูลจากหลาย Endpoint
+                              (Competitions, Rounds, Results) มาประมวลผลและ Aggregation ฝั่ง Client เพื่อสร้าง Nested
+                              Accordion UI ที่รองรับการแสดงผลแยกตามรอบการแข่งขันได้อย่างอิสระ</li>
+                            <li class="mb-2"><b>Automated Member Synchronization:</b> ไฮไลท์สำคัญอยู่ที่ Logic หลังบ้าน
+                              (Backend) ในฟังก์ชัน <code>syncMembersToCheckTable</code>
+                              ซึ่งจะทำการคัดกรองสมาชิกที่มีสถานะ Active เพื่อสร้าง Record ในตาราง Check-in
+                              อัตโนมัติทันทีที่มีการเพิ่มทีมเข้าสู่รอบการแข่งขัน เพื่อรองรับระบบเช็คชื่อหน้างาน
+                              (Check-in Toggle)</li>
+                            <li class="mb-2"><b>Optimistic UI & Quick-Action Toggles:</b>
+                              พัฒนาระบบให้ตอบสนองไวด้วยเทคนิค Optimistic Update เช่นการสลับสถานะ "ผ่าน/ไม่ผ่าน"
+                              (Pass/Fail Toggle) ผ่าน AJAX Request ที่จะอัปเดต UI ทันทีโดยไม่ต้องโหลดหน้าใหม่
+                              พร้อมระบบลัด (Shortcut) อย่าง Double-click Interaction เพื่อเรียกใช้ Scoring Modal</li>
+                            <li><b>Advanced Search & Auto-Expansion Logic:</b> ระบบค้นหาที่ไม่ได้แค่กรองข้อมูล แต่มี
+                              Logic ในการสั่ง <code>collapse('show')</code> เพื่อกาง Accordion
+                              ของรอบการแข่งขันที่ทีมนั้นๆ ซ่อนอยู่โดยอัตโนมัติ ช่วยลดจำนวน Click
+                              และเพิ่มความเร็วในการทำงาน (UX Efficiency)</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -241,8 +430,33 @@
                         <img src="assets/img/portfolio/pj13.png" class="img-fluid w-100 main-stack-img" alt="Staff">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Staff Management</h4>
-                        <p class="text-muted">Assign tasks and roles to staff members.</p>
+                        <h4 class="fw-bold">Staff Task Orchestration & Workflow Automation</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลบริหารจัดการทรัพยากรบุคคลและหน้าที่ความรับผิดชอบ (Task Assignment)
+                          ที่ถูกออกแบบมาเพื่อรองรับการดำเนินงานในสเกลใหญ่ผ่านระบบควบคุม Workflow ที่มีความยืดหยุ่นสูง
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Relational Task Mapping:</b>
+                              สถาปัตยกรรมระบบมอบหมายงานที่เชื่อมโยงความสัมพันธ์ระหว่าง "เจ้าหน้าที่ (Staff Profile)" และ
+                              "รอบการแข่งขัน (Competition Round)" อย่างสมบูรณ์
+                              ช่วยให้ผู้จัดการสามารถแจกจ่ายและติดตามงานแยกตามลำดับความสำคัญและช่วงเวลาได้อย่างแม่นยำ
+                            </li>
+                            <li class="mb-2"><b>Smart Data Import Engine:</b> ไฮไลท์เชิง Logic คือระบบ
+                              <code>Import Previous Staff</code> ที่ใช้กระบวนการดึงข้อมูลจากรอบก่อนหน้า (Deep Copy)
+                              มาจัดทำเป็นชุดคำสั่ง <code>INSERT</code> ใหม่ไปยังรอบปัจจุบันผ่าน Backend API
+                              ช่วยลดความซ้ำซ้อนในการกรอกข้อมูล (Redundancy Reduction)
+                              และเพิ่มประสิทธิภาพในการตั้งค่าระบบได้ทันที
+                            </li>
+                            <li class="mb-2"><b>Asynchronous Task Tracking:</b> พัฒนาหน้าจอแสดงผลด้วย Dynamic Accordion
+                              ที่ผสานสถานะการทำงาน (Work Progress) เข้ากับระบบ Real-time Counters โดยใช้เทคนิค AJAX
+                              ในการอัปเดตสถานะงานรายบุคคล (Done/Pending)
+                              เพื่อรายงานความคืบหน้าของทีมงานเบื้องหลังในทุกมิติ</li>
+                            <li><b>Optimized Data Interaction:</b> บูรณาการ Select2 Library
+                              เพื่อจัดการฐานข้อมูลเจ้าหน้าที่จำนวนมาก และใช้เทคนิค Real-time Row Filtering
+                              ในการค้นหาหน้าที่งาน พร้อมระบบจัดการผ่าน Floating Action Menu
+                              ที่ช่วยลดความซับซ้อนของหน้าจอ (UI Cleanup) ขณะปฏิบัติงาน</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -253,9 +467,35 @@
                         <img src="assets/img/portfolio/pj14.png" class="img-fluid w-100 main-stack-img"
                           alt="Staff Credit">
                       </div>
+                      Gemini บอกว่า
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Staff Credit System</h4>
-                        <p class="text-muted">Track work history and staff rewards.</p>
+                        <h4 class="fw-bold">Staff Incentive & Credit Resource Management</h4>
+                        <div class="text-muted text-start mt-3">
+                          ระบบบริหารจัดการเครดิตและค่าตอบแทนพิเศษสำหรับเจ้าหน้าที่ (Staff Incentive System)
+                          ที่ทำงานสัมพันธ์กับภาระงานจริงในแต่ละกิจกรรม
+                          โดยเน้นความแม่นยำในการระบุตัวตนและประสิทธิภาพในการประมวลผลข้อมูลระดับ Batch
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Context-Aware Data Fetching:</b> Backend API ใช้ <code>INNER JOIN</code>
+                              ร่วมกับ <code>DISTINCT</code>
+                              เพื่อดึงข้อมูลเจ้าหน้าที่เฉพาะที่มีประวัติการได้รับมอบหมายงานในกิจกรรมนั้นๆ (Relational
+                              Filtering) เพื่อให้มั่นใจว่าผู้จัดการจะเข้าถึงเฉพาะข้อมูลสตาฟที่ปฏิบัติงานจริงในโครงการ
+                            </li>
+                            <li class="mb-2"><b>High-Efficiency Batch Reset:</b> ระบบรองรับการทำ Mass Credit Reset
+                              ผ่านคำสั่ง SQL <code>UPDATE</code> ที่ผสานลอจิก <code>INNER JOIN</code> ไว้ในคำสั่งเดียว
+                              ช่วยให้การปรับยอดเครดิตสตาฟทั้งโครงการเกิดขึ้นได้ภายใน 1 Transaction
+                              ซึ่งช่วยลดภาระการทำงานของฐานข้อมูลได้อย่างมีประสิทธิภาพ</li>
+                            <li class="mb-2"><b>Asynchronous Credit Adjustment:</b>
+                              การจัดการเครดิตทั้งแบบรายบุคคลและแบบกลุ่มทำงานผ่าน Asynchronous Requests โดยใช้
+                              <code>rowCount()</code> ในการตรวจสอบสถานะการเปลี่ยนแปลงข้อมูลในระดับ Database
+                              เพื่อความแม่นยำในการตอบสนองของระบบ
+                            </li>
+                            <li><b>Client-Side Search Optimization:</b> พัฒนาระบบค้นหาแบบ Real-time ด้วยการทำ Row
+                              Filtering บนตารางข้อมูลฝั่ง Client-side
+                              ช่วยให้ผู้ใช้สามารถค้นหาเจ้าหน้าที่จากฐานข้อมูลจำนวนมากได้ทันทีโดยไม่ต้องยิง Request ไปยัง
+                              Server ซ้ำซ้อน</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -267,8 +507,33 @@
                           alt="Random Join">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Random Join</h4>
-                        <p class="text-muted">Automated team shuffling logic.</p>
+                        <h4 class="fw-bold">Guided Team Formation & Cross-Institutional Management</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลบริหารจัดการผู้เข้าแข่งขันประเภท "คละทีม" (Mixed Teams)
+                          ที่ออกแบบมาเพื่อรองรับการทำงานของผู้จัดการแข่งขัน
+                          ในการคัดเลือกและจัดสรรผู้สมัครจากต่างมหาวิทยาลัยเข้าสู่ทีมเดียวกัน โดยเน้นการบริหารข้อมูลผ่าน
+                          Interactive UI ที่สอดประสานกันแบบ Real-time
+                          <br><br>
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Guided Manual Assignment:</b> ระบบช่วยอำนวยความสะดวกในการจัดทีมแบบแมนนวล
+                              ผู้จัดการสามารถพิจารณาข้อมูลและกดสั่งย้ายผู้สมัครเดี่ยว (Solo Participants)
+                              เข้าสู่ทีมที่ต้องการได้โดยตรงผ่านเมนูลัด (Action Menu)
+                              ทำให้การคละสถาบันเป็นไปอย่างแม่นยำตามการตัดสินใจของผู้คุม</li>
+                            <li class="mb-2"><b>Dual-Pane Sync Architecture:</b> ออกแบบหน้าต่างการทำงานแบ่งเป็น 2 ฝั่ง
+                              (Participant Pool และ Mixed Team List) ที่ทำงานสอดประสานกัน
+                              มาพร้อมระบบค้นหาที่แยกการทำงานอิสระ (Independent Search)
+                              ช่วยให้ค้นหารายชื่อจากผู้สมัครหลักร้อยคนได้อย่างรวดเร็ว</li>
+                            <li class="mb-2"><b>Dynamic Capacity & Constraint Checks:</b> มีระบบคำนวณโควตาสมาชิก
+                              (Capacity Limit) และแจ้งเตือนพื้นที่ว่างของแต่ละทีมแบบ Real-time ผสานกับระบบดักจับ
+                              (Validation) ทั้งฝั่ง Client และ Server เพื่อบล็อกการเพิ่มคนเข้าทีมที่เต็มแล้วแบบอัตโนมัติ
+                              ป้องกันความผิดพลาดจากการทำงาน (Human Error)</li>
+                            <li><b>Secure Database Transactions:</b> ภายใต้การกดสั่งงานผ่าน UI
+                              ระบบหลังบ้านมีการใช้สถาปัตยกรรม PDO Transactions (Begin/Commit/Rollback)
+                              ในการประมวลผลการสร้างทีม แก้ไขชื่อ และย้ายสมาชิก เพื่อการันตีความสมบูรณ์ของข้อมูล (Data
+                              Integrity) ในทุกๆ รายการ</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -279,8 +544,33 @@
                         <img src="assets/img/portfolio/pj36.png" class="img-fluid w-100 main-stack-img" alt="Badge">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Badge Issuance</h4>
-                        <p class="text-muted">Create ID badges for all attendees.</p>
+                        <h4 class="fw-bold">Badge Issuance & Print Automation</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลสร้างและจัดพิมพ์บัตรประจำตัวผู้เข้าแข่งขัน (ID Badges)
+                          ที่ออกแบบมาเพื่อรองรับการพิมพ์สเกลใหญ่ (Mass Printing) ผสานการทำงานระหว่าง JavaScript DOM
+                          Manipulation และ CSS Print Layout อย่างสมบูรณ์แบบ
+                          <br><br>
+                          <strong>กลไกเชิงเทคนิคที่สำคัญ (Core Mechanics):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Print-Specific CSS Architecture:</b>
+                              ใช้เทคนิคการควบคุมการเรนเดอร์หน้ากระดาษสำหรับการพิมพ์โดยเฉพาะ ระบบจะทำการซ่อน UI ของ Web
+                              App ทั้งหมดชั่วคราว และใช้โครงสร้าง Flexbox เข้ามาควบคุมพื้นที่แสดงผลเพื่อล็อกเลย์เอาต์
+                              (Grid Layout) ให้ออกมาจัดเรียงพอดีกับหน้ากระดาษ A4 ป้องกันปัญหาหน้าเว็บพังเมื่อสั่งพิมพ์
+                            </li>
+                            <li class="mb-2"><b>Dynamic QR Code Integration:</b> บูรณาการ API เพื่อประมวลผลและสร้าง QR
+                              Code ประจำตัวผู้เข้าแข่งขันแต่ละคนแบบ Real-time (On-the-fly)
+                              โดยดึงข้อมูลรหัสอ้างอิงประจำตัวผู้สมัครแบบเข้ารหัส
+                              เพื่อเตรียมพร้อมสำหรับการนำไปสแกนใช้งานกับระบบ Check-in หน้างาน</li>
+                            <li class="mb-2"><b>Client-Side Data Grouping:</b>
+                              เพิ่มประสิทธิภาพระบบด้วยการดึงข้อมูลรายชื่อทั้งหมดมาทำ Data Aggregation
+                              และจัดกลุ่มตามสังกัดทีม (Group by Team) ในฝั่ง Front-end ทำงานร่วมกับระบบแบ่งหน้า
+                              (Pagination) และค้นหาข้อมูล เพื่อให้ UI โหลดและตอบสนองได้อย่างรวดเร็ว</li>
+                            <li><b>Virtual Print Spooling:</b> รองรับโหมดการพิมพ์ที่ยืดหยุ่น (พิมพ์แยกทีม /
+                              พิมพ์ทั้งหมด) โดยระบบจะทำการสร้างโครงสร้างบัตรขึ้นมาใหม่ชั่วคราว (Virtual DOM Injection)
+                              ไว้ในคอนเทนเนอร์เบื้องหลัง ก่อนจะส่งคำสั่งประมวลผลไปยังระบบพิมพ์ของเบราว์เซอร์อัตโนมัติ
+                              ทำให้ได้เอกสารที่สะอาดตาและสมบูรณ์</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -328,11 +618,6 @@
                     type="button" role="tab">
                     <i class="bi bi-headset me-2"></i> 8. ผู้ช่วยแอดมิน
                   </button>
-                  <button class="nav-link" id="v-pills-a9-tab" data-bs-toggle="pill" data-bs-target="#v-pills-a9"
-                    type="button" role="tab">
-                    <i class="bi bi-pie-chart me-2"></i> 9. รายงาน
-                  </button>
-
                 </div>
               </div>
 
@@ -342,13 +627,31 @@
                   <div class="tab-pane fade show active" id="v-pills-a1" role="tabpanel">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                       <div class="photo-stack game-gallery-btn" data-title="หน้าหลักแอดมิน (Admin Dashboard)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                        data-images="assets/img/portfolio2/pja1.png">
+                        <img src="assets/img/portfolio2/pja1.png" class="img-fluid w-100 main-stack-img"
                           alt="Admin Dashboard">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
                         <h4 class="fw-bold">Admin Dashboard</h4>
-                        <p class="text-muted">ภาพรวมระบบ สถิติการใช้งาน และสถานะการแข่งขันทั้งหมด (คลิกเพื่อดูรูป)</p>
+                        <div class="text-muted text-start mt-3">
+                          หน้า Dashboard สำหรับผู้ดูแลระบบ ใช้สำหรับดูตัวเลขสถิติภาพรวมของการใช้งานระบบ
+                          โดยเน้นการดึงข้อมูลจากหลายส่วนมาแสดงผลรวมกันในหน้าเดียว
+                          <br><br>
+                          <strong>รายละเอียดการทำงาน (Technical Details):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Asynchronous API Requests:</b> ใช้ jQuery <code>$.get()</code>
+                              ยิงรีเควสไปหา API หลายๆ เส้นพร้อมกัน (Manager, Staff, Merchant) เพื่อโหลดตัวเลขสถิติแยกกัน
+                              ทำให้หน้าเว็บแสดงผลได้เร็วขึ้นโดยไม่ต้องรอ API ตัวใดตัวหนึ่งโหลดเสร็จ</li>
+                            <li class="mb-2"><b>Error Handling:</b> มีการเขียนดักจับ Error (ใช้ <code>.fail()</code>)
+                              ไว้ในทุกๆ API Request หากมีเส้นไหนล่มหรือโหลดไม่ติด ระบบจะแสดงเครื่องหมาย '-' แทนตัวเลข
+                              เพื่อป้องกันไม่ให้สคริปต์หยุดทำงานและหน้าเว็บพัง</li>
+                            <li class="mb-2"><b>Dynamic Greeting:</b> เขียน JS ดึงเวลาปัจจุบันจากเครื่องผู้ใช้งาน
+                              (Client-side) มาเช็คเงื่อนไข เพื่อเปลี่ยนคำทักทายบนหน้าเว็บ (เช้า/บ่าย/เย็น) อัตโนมัติ
+                            </li>
+                            <li><b>Responsive UI:</b> ส่วนเมนูทางลัด (Shortcut) มีการเขียน CSS จัด Layout ไว้แบบยืดหยุ่น
+                              รองรับการเปิดใช้งานทั้งบนหน้าจอคอมพิวเตอร์และมือถือ</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -356,13 +659,36 @@
                   <div class="tab-pane fade" id="v-pills-a2" role="tabpanel">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                       <div class="photo-stack game-gallery-btn" data-title="แก้ไขโครงการ (Edit Project)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                        data-images="assets/img/portfolio2/pja2.png,assets/img/portfolio2/pja3.png">
+                        <img src="assets/img/portfolio2/pja2.png" class="img-fluid w-100 main-stack-img"
                           alt="Edit Project">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Edit Project</h4>
-                        <p class="text-muted">จัดการแก้ไขรายละเอียด ชื่อโครงการ และข้อมูลเบื้องต้นของการแข่งขัน</p>
+                        <h4 class="fw-bold">Project Settings & Configuration</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลสำหรับตั้งค่าข้อมูลหลักของโครงการแข่งขัน (Project Configuration)
+                          จัดการได้ทั้งรายละเอียดทั่วไป ช่วงเวลาจัดกิจกรรม ไฟล์เอกสารแนบ และการตั้งค่าระบบส่งอีเมล
+                          (SMTP)
+                          <br><br>
+                          <strong>รายละเอียดการทำงาน (Technical Details):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Multipart Data Processing:</b> รองรับการแก้ไขข้อมูลแบบ Text
+                              และการอัปโหลดไฟล์ (PDF/Word) ไปพร้อมกันด้วย <code>FormData</code> ฝั่ง Backend (PHP)
+                              มีฟังก์ชันตรวจจับไฟล์ อัปโหลดพร้อมเปลี่ยนชื่อด้วย Timestamp เพื่อป้องกันไฟล์ซ้ำ
+                              และเก็บเฉพาะ Relative Path ลงฐานข้อมูล</li>
+                            <li class="mb-2"><b>Accidental Edit Protection:</b> เพิ่มความปลอดภัยให้ข้อมูลสำคัญ เช่น
+                              ข้อมูลบัญชีอีเมล (App Password) โดยตั้งค่า Input ให้เป็น Readonly ควบคู่กับการเขียน JS
+                              Event <code>dblclick</code> หากต้องการแก้ไขต้อง "ดับเบิลคลิก" เพื่อปลดล็อกเท่านั้น
+                              พร้อมแสดง Toast Notification แจ้งเตือน</li>
+                            <li class="mb-2"><b>DateTime Normalization:</b> มีลอจิกการจัดรูปแบบข้อมูล (Data Formatting)
+                              โดยแปลงวันที่และเวลาที่รับมาจากฝั่ง Front-end (HTML5 datetime-local) ให้เป็นฟอร์แมต
+                              <code>Y-m-d H:i:s</code> ก่อนอัปเดตลง MySQL เพื่อป้องกัน Date-format Error
+                            </li>
+                            <li><b>Dynamic Data Binding:</b> ใช้ <code>URLSearchParams</code> ดึงค่า ID โครงการจาก URL
+                              Param มายิง API ขอข้อมูล (GET Request) เพื่อนำมา Binding
+                              แสดงผลบนฟอร์มให้พร้อมสำหรับการแก้ไขแบบอัตโนมัติ</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -370,14 +696,36 @@
                   <div class="tab-pane fade" id="v-pills-a3" role="tabpanel">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                       <div class="photo-stack game-gallery-btn" data-title="จัดการผู้จัดการแข่งขัน (Manager Data)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                        data-images="assets/img/portfolio2/pja4.png,assets/img/portfolio2/pja5.png">
+                        <img src="assets/img/portfolio2/pja4.png" class="img-fluid w-100 main-stack-img"
                           alt="Manager Data">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Managers Management</h4>
-                        <p class="text-muted">เพิ่ม ลบ แก้ไข ข้อมูลพื้นฐานของรายชื่อผู้จัดการแข่งขันในแต่ละเขตพื้นที่
-                        </p>
+                        <h4 class="fw-bold">Managers Management (CRUD)</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลจัดการข้อมูลบัญชีผู้จัดการแข่งขัน (Tournament Managers) รองรับการเพิ่ม ลบ แก้ไข
+                          พร้อมระบบเชื่อมโยงความสัมพันธ์ของข้อมูลกับโปรเจกต์ปัจจุบัน
+                          <br><br>
+                          <strong>รายละเอียดการทำงาน (Technical Details):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Context-Aware Data Binding:</b>
+                              ลอจิกหลังบ้านถูกออกแบบให้ดึงรหัสโครงการที่กำลังเปิดใช้งานอยู่ (Active Project)
+                              มาผูกกับบัญชีผู้จัดการที่ถูกสร้างใหม่โดยอัตโนมัติ เพื่อป้องกันปัญหาข้อมูลขาดความสัมพันธ์
+                              และลดภาระการกรอกข้อมูลของผู้ดูแลระบบ</li>
+                            <li class="mb-2"><b>Secure Password Handling:</b>
+                              ระบบหลังบ้านรองรับการรับส่งข้อมูลหลายรูปแบบ (JSON/FormData)
+                              พร้อมกระบวนการเข้ารหัสรหัสผ่านแบบทางเดียว (Bcrypt Hashing)
+                              และเขียนลอจิกฟอร์มให้สามารถแก้ไขข้อมูลทั่วไปได้โดยไม่บังคับเปลี่ยนรหัสผ่าน</li>
+                            <li class="mb-2"><b>Real-time Client-Side Search:</b>
+                              ระบบค้นหารายชื่อทำงานผ่านการกรองข้อมูลบนหน้าจอ (DOM Filtering) ด้วย JavaScript
+                              ทันทีที่มีการพิมพ์
+                              ทำให้ผู้ใช้สามารถค้นหาข้อมูลหลักร้อยรายการได้รวดเร็วโดยไม่ต้องร้องขอข้อมูลใหม่จากเซิร์ฟเวอร์
+                            </li>
+                            <li><b>Dynamic Data Aggregation:</b> มีฟังก์ชันอัปเดตตัวเลขสถิติด้านบนของหน้าจอ
+                              โดยใช้ลอจิกของ JavaScript ในการจัดการ Array คัดกรองข้อมูลที่ไม่ซ้ำกัน (Distinct)
+                              เพื่อคำนวณจำนวนโปรเจกต์ที่กำลังทำงานอยู่แบบ Real-time</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -385,12 +733,37 @@
                   <div class="tab-pane fade" id="v-pills-a4" role="tabpanel">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                       <div class="photo-stack game-gallery-btn" data-title="จัดการสตาฟ (Staff Data)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img" alt="Staff Data">
+                        data-images="assets/img/portfolio2/pja6.png,assets/img/portfolio2/pja7.png">
+                        <img src="assets/img/portfolio2/pja6.png" class="img-fluid w-100 main-stack-img"
+                          alt="Staff Data">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Staff Management</h4>
-                        <p class="text-muted">จัดการข้อมูลพื้นฐานของสตาฟ และทีมงานเบื้องหลังทั้งหมด</p>
+                        <h4 class="fw-bold">Staff Management (CRUD)</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลบริหารจัดการบัญชีรายชื่อและข้อมูลพื้นฐานของเจ้าหน้าที่ (Staff) เบื้องหลังทั้งหมด
+                          มาพร้อมระบบประมวลผลสถิติและอัลกอริทึมสร้างรหัสประจำตัวอัตโนมัติ
+                          <br><br>
+                          <strong>รายละเอียดการทำงาน (Technical Details):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Algorithmic ID Generation:</b>
+                              ระบบสร้างรหัสประจำตัวเจ้าหน้าที่อัตโนมัติฝั่ง Backend โดยใช้ลอจิกการประกอบค่าระหว่าง
+                              ปีปัจจุบัน, ลำดับการสมัคร (Sequence Number) ที่ดึงจากฐานข้อมูล และชุดตัวอักษรแบบสุ่ม
+                              เพื่อให้ได้รหัสที่เป็นมาตรฐานและป้องกันการซ้ำซ้อน (Data Duplication) ขั้นเด็ดขาด</li>
+                            <li class="mb-2"><b>Secure Authentication Handling:</b>
+                              ระบบจัดการข้อมูลบัญชีที่มีกระบวนการเข้ารหัสผ่านแบบทางเดียว (One-way Hashing)
+                              และถูกออกแบบให้ฟอร์มแก้ไขข้อมูลมีความยืดหยุ่น
+                              ผู้ดูแลระบบสามารถอัปเดตประวัติทั่วไปหรือปรับสถานะบัญชี (Active/Inactive)
+                              ได้โดยไม่บังคับให้ต้องรีเซ็ตรหัสผ่านใหม่</li>
+                            <li class="mb-2"><b>Real-time Data Aggregation:</b> ประยุกต์ใช้ฟังก์ชันจัดการ Array ฝั่ง
+                              Client-side ในการประมวลผลและคำนวณข้อมูลสถิติ เช่น การหายอดรวมเครดิตของสตาฟทั้งระบบ
+                              และการคัดกรองนับจำนวนบัญชีที่เปิดใช้งานอยู่ เพื่ออัปเดตตัวเลขบนหน้าจอ (Dashboard Stats)
+                              แบบ Real-time</li>
+                            <li><b>Client-Side Search Optimization:</b>
+                              ลดภาระการทำงานของเซิร์ฟเวอร์ด้วยระบบค้นหารายชื่อแบบ On-page Filtering ที่ทำงานผ่าน
+                              JavaScript ทันทีเมื่อผู้ใช้พิมพ์ข้อความ
+                              ช่วยให้การเข้าถึงข้อมูลเจ้าหน้าที่หลักร้อยคนเป็นไปอย่างรวดเร็วและไร้รอยต่อ</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -398,12 +771,39 @@
                   <div class="tab-pane fade" id="v-pills-a5" role="tabpanel">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                       <div class="photo-stack game-gallery-btn" data-title="จัดการร้านค้า (Shop Data)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img" alt="Shop Data">
+                        data-images="assets/img/portfolio2/pja8.png,assets/img/portfolio2/pja9.png">
+                        <img src="assets/img/portfolio2/pja8.png" class="img-fluid w-100 main-stack-img"
+                          alt="Shop Data">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Shops Management</h4>
-                        <p class="text-muted">บริหารจัดการข้อมูลร้านค้าที่เข้าร่วมภายในงานแข่งขัน</p>
+                        <h4 class="fw-bold">merchant Management (CRUD)</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลบริหารจัดการข้อมูลร้านค้าและพาร์ทเนอร์ที่เข้าร่วมกิจกรรม
+                          รองรับการจัดการข้อมูลแบบซับซ้อนที่มีทั้งข้อความและไฟล์รูปภาพ (Multipart Data)
+                          พร้อมระบบจัดการบัญชีผู้ใช้งาน
+                          <br><br>
+                          <strong>รายละเอียดการทำงาน (Technical Details):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Multipart File Uploads:</b> ออกแบบระบบรับส่งข้อมูลแบบ
+                              <code>FormData</code> เพื่อจัดการอัปโหลดไฟล์รูปภาพโลโก้ร้านค้าไปพร้อมกับข้อมูลทั่วไป
+                              โดยฝั่ง Backend มีลอจิกจัดการเปลี่ยนชื่อไฟล์ใหม่ด้วย Timestamp เพื่อป้องกันชื่อไฟล์ซ้ำ
+                              และจัดเก็บเฉพาะเส้นทางไฟล์ (Relative Path) เพื่อประสิทธิภาพของฐานข้อมูล
+                            </li>
+                            <li class="mb-2"><b>HTTP Method Spoofing:</b> ประยุกต์ใช้เทคนิคจำลองเมธอด (Method Spoofing)
+                              ในการส่งฟอร์มแก้ไขข้อมูลที่มีไฟล์แนบ เพื่อข้ามขีดจำกัดของเซิร์ฟเวอร์ในการอ่าน
+                              <code>multipart/form-data</code> ทำให้ระบบสามารถอัปเดตไฟล์ได้โดยยังคงรักษาโครงสร้าง API
+                              ตามมาตรฐาน RESTful
+                            </li>
+                            <li class="mb-2"><b>Secure Authentication:</b>
+                              ระบบจัดการบัญชีร้านค้ามีการเข้ารหัสผ่านแบบทางเดียว (One-way Hashing)
+                              และแยกลอจิกการอัปเดตข้อมูลทั่วไปออกจากการแก้ไขรหัสผ่าน
+                              เพื่อให้ผู้ดูแลสามารถปรับปรุงข้อมูลร้านได้โดยไม่กระทบกับรหัสผ่านเดิม</li>
+                            <li><b>Client-Side Aggregation:</b> ประมวลผลและอัปเดตสถิติภาพรวม (เช่น
+                              ยอดรวมพอยต์ของทุกร้านค้า) แบบ Real-time บนหน้าจอด้วย JavaScript Array Methods
+                              ควบคู่กับระบบค้นหารายชื่อแบบกรองข้อมูลหน้าเว็บ (DOM Filtering)
+                              ช่วยให้ระบบตอบสนองอย่างรวดเร็ว</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -411,12 +811,37 @@
                   <div class="tab-pane fade" id="v-pills-a6" role="tabpanel">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                       <div class="photo-stack game-gallery-btn" data-title="จัดการกิจกรรม (Activities)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img" alt="Activities">
+                        data-images="assets/img/portfolio2/pja10.png,assets/img/portfolio2/pja11.png">
+                        <img src="assets/img/portfolio2/pja10.png" class="img-fluid w-100 main-stack-img"
+                          alt="Activities">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Manage Activities</h4>
-                        <p class="text-muted">สร้าง แก้ไข หรือลบตารางกิจกรรมหลักที่เกิดขึ้นตลอดระยะเวลาของโครงการ</p>
+                        <h4 class="fw-bold">Competition Management</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลบริหารจัดการข้อมูลกิจกรรมและการแข่งขันหลักของโครงการ รองรับการจัดการข้อมูลเชิงลึก
+                          การตั้งค่าโควตา และการแนบไฟล์เอกสารระเบียบการแบบครบวงจร
+                          <br><br>
+                          <strong>รายละเอียดการทำงาน (Technical Details):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Multipart Data & Method Spoofing:</b>
+                              สถาปัตยกรรมหลังบ้านรองรับการรับส่งข้อมูลฟอร์มแบบซับซ้อนร่วมกับไฟล์เอกสาร โดยใช้เทคนิคจำลอง
+                              HTTP Method เพื่อข้ามข้อจำกัดการอัปเดตไฟล์แบบปกติ
+                              ทำให้ระบบสามารถจัดการข้อมูลพร้อมไฟล์แนบได้โดยยังคงโครงสร้าง RESTful API ไว้ได้อย่างสมบูรณ์
+                            </li>
+                            <li class="mb-2"><b>Dynamic Resource Fetching:</b> ยกระดับ UI ด้วยการบูรณาการไลบรารีจัดการ
+                              Dropdown เข้ากับระบบดึงข้อมูลแบบ Asynchronous (ทั้งจาก Database API และไฟล์โครงสร้าง JSON)
+                              เพื่อสร้างตัวเลือกหมวดหมู่และระดับการศึกษาแบบอัตโนมัติ ช่วยป้องกันการกรอกข้อมูลผิดพลาด
+                              (Data Validation)</li>
+                            <li class="mb-2"><b>Context-Aware Relational Binding:</b>
+                              ลอจิกหลังบ้านถูกออกแบบให้สามารถประมวลผลและจัดการความสัมพันธ์ของข้อมูล (Foreign Keys) เช่น
+                              การกำหนดผู้ดูแลกิจกรรม และรหัสโครงการ ได้อย่างยืดหยุ่น พร้อมระบบคัดกรองค่าว่าง (Strict
+                              Null Handling) ที่รัดกุมเพื่อรักษาความสมบูรณ์ของฐานข้อมูล</li>
+                            <li><b>Strict State Management:</b> ฝั่งหน้าบ้าน (Client-side)
+                              มีกลไกดักจับและล้างสถานะข้อมูลเชิงลึกแบบ 100%
+                              ทุกครั้งที่มีการเรียกหน้าต่างสร้างกิจกรรมใหม่ เพื่อป้องกันปัญหาข้อมูลตกค้าง (Data Overlap)
+                              จากฟอร์มก่อนหน้า ผสานกับระบบคำนวณสถิติสถานะกิจกรรมแบบ Real-time</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -424,14 +849,39 @@
                   <div class="tab-pane fade" id="v-pills-a7" role="tabpanel">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                       <div class="photo-stack game-gallery-btn" data-title="มอบหมายผู้จัดการ (Assign Managers)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                        data-images="assets/img/portfolio2/pja12.png,assets/img/portfolio2/pja13.png">
+                        <img src="assets/img/portfolio2/pja12.png" class="img-fluid w-100 main-stack-img"
                           alt="Assign Managers">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
                         <h4 class="fw-bold">Assign Managers</h4>
-                        <p class="text-muted">ระบบกำหนดสิทธิ์และมอบหมายความรับผิดชอบกิจกรรมต่างๆ ให้กับผู้จัดการแต่ละคน
-                        </p>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลบริหารจัดการสิทธิ์และมอบหมายความรับผิดชอบ (Role Assignment)
+                          ออกแบบมาเพื่ออำนวยความสะดวกในการจัดสรรบุคลากร
+                          โดยมีลอจิกป้องกันความซ้ำซ้อนในการทำงานของผู้จัดการแข่งขัน
+                          <br><br>
+                          <strong>รายละเอียดการทำงาน (Technical Details):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Smart Resource Allocation:</b> ฝั่ง Front-end
+                              มีอัลกอริทึมตรวจสอบสถานะการทำงาน (Workload Checking) โดยนำข้อมูลกิจกรรมทั้งหมดมา
+                              Cross-check กับรายชื่อผู้จัดการ เพื่อคัดกรองและสร้างตัวเลือก Dropdown เฉพาะ
+                              "ผู้จัดการที่ยังไม่ได้รับมอบหมายงาน" เท่านั้น ป้องกันปัญหาการจัดคนซ้ำซ้อน (Double
+                              Assignment)</li>
+                            <li class="mb-2"><b>Strict Null State Handling:</b> สถาปัตยกรรม Backend
+                              ถูกออกแบบมาให้รองรับการ "ถอดถอนสิทธิ์" (Unassign) อย่างปลอดภัย
+                              โดยมีลอจิกดักจับและแปลงค่าจากฝั่ง Client (เช่น ค่าว่าง หรือ String คำว่า "null")
+                              ให้กลายเป็นค่า <code>NULL</code> ในระดับ Database อย่างรัดกุม เพื่อไม่ให้กระทบกับ Foreign
+                              Key Constraint</li>
+                            <li class="mb-2"><b>State-Preserving UI:</b>
+                              ลอจิกหน้าบ้านถูกเขียนให้จดจำและแสดงชื่อของผู้จัดการ "คนปัจจุบัน" ที่ดูแลกิจกรรมนั้นๆ
+                              เอาไว้ให้เลือกได้เสมอ (แม้จะถูกกรองออกด้วยเงื่อนไขคนว่าง) ทำให้การเปลี่ยนมือผู้ดูแล
+                              หรือการยืนยันผู้ดูแลเดิม ทำงานได้อย่างไม่ติดขัด</li>
+                            <li><b>Client-Side DOM Filtering:</b>
+                              ระบบค้นหาข้อมูลกิจกรรมใช้วิธีการกรองข้อความและควบคุมการแสดงผลของตารางผ่าน JavaScript (DOM
+                              Filtering) แบบ Real-time ทันทีที่พิมพ์ข้อความ
+                              ช่วยลดภาระการร้องขอข้อมูลซ้ำซ้อนไปยังเซิร์ฟเวอร์</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -439,29 +889,39 @@
                   <div class="tab-pane fade" id="v-pills-a8" role="tabpanel">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                       <div class="photo-stack game-gallery-btn" data-title="ผู้ช่วยแอดมิน (Admin Assistants)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
+                        data-images="assets/img/portfolio2/pja14.png,assets/img/portfolio2/pja15.png">
+                        <img src="assets/img/portfolio2/pja14.png" class="img-fluid w-100 main-stack-img"
                           alt="Admin Assistants">
                       </div>
                       <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Admin Assistants</h4>
-                        <p class="text-muted">จัดการระดับสิทธิ์การเข้าถึงระบบสำหรับบัญชีผู้ช่วยแอดมิน (Role Control)</p>
-                      </div>
-                    </div>ป
-                  </div>
-
-                  <div class="tab-pane fade" id="v-pills-a9" role="tabpanel">
-                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-                      <div class="photo-stack game-gallery-btn" data-title="รายงานสำหรับแอดมิน (Admin Reports)"
-                        data-images="assets/img/portfolio/PJ1.png,assets/img/portfolio/pj18.png">
-                        <img src="assets/img/portfolio/PJ1.png" class="img-fluid w-100 main-stack-img"
-                          alt="Admin Reports">
-                      </div>
-                      <div class="card-body p-4 bg-white text-center">
-                        <h4 class="fw-bold">Admin Reports</h4>
-                        <p class="text-muted">สรุปรายงานภาพรวมระบบขั้นสูง พร้อมส่งออกข้อมูล (Export Data) สำหรับผู้ดูแล
-                        </p>
-                      </div>
+                        <h4 class="fw-bold">Admin Assistants (Role & Access Control)</h4>
+                        <div class="text-muted text-start mt-3">
+                          โมดูลบริหารจัดการบัญชีผู้ช่วยผู้ดูแลระบบ (Moderators) ที่เน้นความปลอดภัยของข้อมูลเป็นหลัก
+                          บูรณาการระบบตรวจสอบสิทธิ์เข้ากับการจัดการฐานข้อมูลแบบครบวงจร
+                          <br><br>
+                          <strong>รายละเอียดการทำงาน (Technical Details):</strong>
+                          <ul class="text-start mt-2 mb-0 pl-3">
+                            <li class="mb-2"><b>Session-Based API Authorization:</b> สถาปัตยกรรม Backend
+                              มีการวางระบบรักษาความปลอดภัย (Security Guard) เพื่อตรวจสอบสิทธิ์เซสชัน (Session) ในระดับ
+                              API ก่อนเริ่มประมวลผล หากคำขอไม่มีสิทธิ์ระดับ Admin ระบบจะปฏิเสธการทำงานและส่งสถานะ
+                              Unauthorized ทันที ป้องกันการเข้าถึงผ่านช่องทางอื่น (API Bypass)</li>
+                            <li class="mb-2"><b>Dynamic Query & Secure Hashing:</b>
+                              ลอจิกการแก้ไขข้อมูลหลังบ้านถูกออกแบบให้สร้างชุดคำสั่ง SQL แบบยืดหยุ่น (Dynamic Query
+                              Building) โดยระบบจะประมวลผลอัปเดตเฉพาะฟิลด์ที่มีการแก้ไขจริงเท่านั้น
+                              ผสานกับการเข้ารหัสผ่านแบบทางเดียว (One-way Hashing)
+                              ทำให้สามารถแก้ข้อมูลทั่วไปได้โดยไม่กระทบกับรหัสผ่านเดิม</li>
+                            <li class="mb-2"><b>Advanced Data Grid Integration:</b>
+                              ยกระดับการจัดการตารางข้อมูลด้วยไลบรารี Data Grid ที่ถูกปรับแต่ง (Customization)
+                              ลอจิกการทำงาน โดยแยกช่องค้นหา (Search Input) ออกมาผูกการทำงานกับ DOM ภายนอก
+                              ทำให้หน้าต่างผู้ใช้งาน (UI) ดูสะอาดตาและค้นหาข้อมูลได้รวดเร็วขึ้น</li>
+                            <li><b>Single-State Form Management:</b> ออกแบบสถาปัตยกรรมหน้าบ้าน (Front-end)
+                              เพื่อลดความซ้ำซ้อนของโค้ด (Code Reusability)
+                              โดยใช้โครงสร้างฟอร์มเดียวกันในการประมวลผลทั้งการ "สร้าง" และ "แก้ไข" บัญชีผู้ใช้งาน
+                              ผ่านการควบคุมด้วยตัวแปรสถานะ (State Flag) ที่จะปรับเปลี่ยนลอจิกและข้อความบนหน้าจออัตโนมัติ
+                            </li>
+                          </ul>
+                        </div>
+                      </div>>
                     </div>
                   </div>
 
